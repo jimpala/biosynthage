@@ -1,4 +1,4 @@
-.jumbotron {
+.landing-main-slide {
     position: relative;
     background: #000 url("https://upload.wikimedia.org/wikipedia/commons/0/03/Wilkins_Building_1,_UCL,_London_-_Diliff.jpg") center center;
     width: 100vw;
@@ -7,4 +7,23 @@
     overflow: hidden;
     padding: 0;
     opacity: 0.75
+}
+
+.landing-video-slide {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+    padding: 0;
+}
+
+.landing-background-slide {
+    position: relative;
+    background: #000 url('http://2015.igem.org/wiki/images/a/a5/UCLFRONTBLOCK_1_2015.png') center center;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+    padding: 0;
 }
