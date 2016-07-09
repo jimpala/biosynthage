@@ -1,3 +1,12 @@
+/*
+ BackgroundSlide.jsx
+ --------------------
+ ELEMENT
+ --------------------
+ Components used:
+
+ */
+
 import React from 'react';
 
 const styles = {

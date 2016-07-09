@@ -1,3 +1,12 @@
+/*
+ App.jsx
+ --------------------
+ --------------------
+ Components used:
+ - Menu
+ - LandingPage
+ */
+
 import React from 'react';
 import LandingPage from './LandingPage.jsx';
 import Menu from './Menu.jsx';

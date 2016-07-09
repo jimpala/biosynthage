@@ -1,3 +1,15 @@
+/*
+LandingPage.jsx
+--------------------
+PAGE
+--------------------
+Components used:
+- MainSlide
+- VideoSlide
+- BackgroundSlide
+ */
+
+
 import React from 'react';
 import MainSlide from './MainSlide.jsx';
 import VideoSlide from './VideoSlide.jsx';

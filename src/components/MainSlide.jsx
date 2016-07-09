@@ -1,5 +1,18 @@
+/*
+ MainSlide.jsx
+ --------------------
+ ELEMENT
+ --------------------
+ Components used:
+
+ */
+
 import React from 'react';
 
+
+/*
+CSS as JS key:value object/struct.
+ */
 const styles = {
   container: {
     display: 'flex',
@@ -21,6 +34,9 @@ const styles = {
   }
 }
 
+/*
+
+ */
 export default class MainSlide extends React.Component {
   logoMouseEnter(e) {
     const $logo = $('#' + e.target.id);
