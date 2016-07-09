@@ -10,4 +10,4 @@ node_modules
 npm-debug.log
 
 # Ignore the bundle
-static/js
+*bundle.js
