@@ -27,3 +27,13 @@
     overflow: hidden;
     padding: 0;
 }
+
+.description-background {
+    position: relative;
+    background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('http://2015.igem.org/wiki/images/a/a6/UCL_MG_1643_2.jpg') center center;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+    padding: 0;
+}
