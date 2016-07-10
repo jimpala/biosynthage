@@ -26,11 +26,11 @@ const styles = {
   },
   button: {
     opacity: 1,
-    backgroundColor: "#336666",
+    backgroundColor: "transparent",
     fontFamily: "Andale Mono",
     fontSize: "1vw",
     width: '10vw',
-    border: 'solid #336666 5px'
+    border: 'solid white 5px'
   }
 }
 
@@ -59,7 +59,7 @@ export default class MainSlide extends React.Component {
     const $button = $('#' + e.target.id);
 
     $button.animate({
-      backgroundColor: 'transparent',
+      backgroundColor: 'rgba(0,0,0,  0.5)',
       borderColor: "white"
     }, 150);
   }
@@ -68,15 +68,15 @@ export default class MainSlide extends React.Component {
     const $button = $('#' + e.target.id);
 
     $button.animate({
-      backgroundColor: '#336666',
-      borderColor: "#336666"
+      backgroundColor: 'transparent',
+      borderColor: "white"
     }, 500);
   }
 
   render(){
     return  <div className="landing-main-slide" style={styles.container}>
       <img id="logo" style={styles.logo}
-           src="../static/img/UCL_iGEM_logo.png"
+           src="../static/img/Ucligem_logo.png"
            alt=""
            onMouseEnter={this.logoMouseEnter.bind(this)}
            onMouseLeave={this.logoMouseLeave.bind(this)}/>
