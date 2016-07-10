@@ -28,8 +28,8 @@ const styles = {
     opacity: 1,
     backgroundColor: "#336666",
     fontFamily: "Andale Mono",
-    fontSize: "120%",
-    width: '10%',
+    fontSize: "1vw",
+    width: '10vw',
     border: 'solid #336666 5px'
   }
 }
@@ -76,7 +76,7 @@ export default class MainSlide extends React.Component {
   render(){
     return  <div className="landing-main-slide" style={styles.container}>
       <img id="logo" style={styles.logo}
-           src="http://2015.igem.org/wiki/images/5/56/Mind_the_gut_logo_small_frontpage.png"
+           src="../static/img/UCL_iGEM_logo.png"
            alt=""
            onMouseEnter={this.logoMouseEnter.bind(this)}
            onMouseLeave={this.logoMouseLeave.bind(this)}/>
