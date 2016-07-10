@@ -4,11 +4,12 @@
  PAGE
  --------------------
  Components used:
- 
+
  */
 
 import React from 'react';
 import Menu from './Menu.jsx';
+import ImageArray from './ImageArray.jsx'
 
 const styles = {
   container: {
@@ -33,27 +34,13 @@ const styles = {
     padding: '2% 0 0 0',
     borderTop: "2px solid black",
     fontFamily: "Raleway"
-  },
-  arrow: {
-    fontSize: '400%',
-    paddingTop: '20vh',
-    color: 'Black'
   }
 }
 
+const imageArray = ["http://2015.igem.org/wiki/images/a/a5/UCLFRONTBLOCK_1_2015.png",
+  "http://2015.igem.org/wiki/images/a/a6/UCL_MG_1643_2.jpg"];
+
 export default class DescriptionPage extends React.Component {
-  componentDidMount(){
-    $('#arrow').click((e)=>{
-      e.preventDefault();
-    })
-  }
-
-  scroll(){
-    $('html, body').animate({
-      scrollTop: $('#description').offset().top
-    }, 1000);
-  }
-
   render() {
     return (
       <div>
@@ -65,11 +52,9 @@ export default class DescriptionPage extends React.Component {
               how we can potentially use them to
               fight
               the rising issue of mental health disorders in the modern world </p>
-            <a id="arrow" href="#" onClick={this.scroll}><span className="glyphicon glyphicon-triangle-bottom" style={styles.arrow}></span></a>
+            <ImageArray images={imageArray}/>
+            <ImageArray images={imageArray}/>
           </div>
-        </div>
-        <div id="description" className="description-desc">
-          <h1>Description</h1>
         </div>
       </div>
     )
