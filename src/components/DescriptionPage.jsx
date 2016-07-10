@@ -36,7 +36,7 @@ const styles = {
   },
   arrow: {
     fontSize: '400%',
-    paddingTop: '400%',
+    paddingTop: '20vh',
     color: 'Black'
   }
 }
