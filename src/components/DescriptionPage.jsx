@@ -33,10 +33,27 @@ const styles = {
     padding: '2% 0 0 0',
     borderTop: "2px solid black",
     fontFamily: "Raleway"
+  },
+  arrow: {
+    fontSize: '400%',
+    paddingTop: '400%',
+    color: 'Black'
   }
 }
 
 export default class DescriptionPage extends React.Component {
+  componentDidMount(){
+    $('#arrow').click((e)=>{
+      e.preventDefault();
+    })
+  }
+
+  scroll(){
+    $('html, body').animate({
+      scrollTop: $('#description').offset().top
+    }, 1000);
+  }
+
   render() {
     return (
       <div>
@@ -48,7 +65,11 @@ export default class DescriptionPage extends React.Component {
               how we can potentially use them to
               fight
               the rising issue of mental health disorders in the modern world </p>
+            <a id="arrow" href="#" onClick={this.scroll}><span className="glyphicon glyphicon-triangle-bottom" style={styles.arrow}></span></a>
           </div>
+        </div>
+        <div id="description" className="description-desc">
+          <h1>Description</h1>
         </div>
       </div>
     )

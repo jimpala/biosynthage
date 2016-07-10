@@ -37,3 +37,13 @@
     overflow: hidden;
     padding: 0;
 }
+
+.description-desc {
+    position: relative;
+    background: linear-gradient(rgba(255,0,0,0.2), rgba(255,255,255,0.2)) center center;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+    padding: 0;
+}
