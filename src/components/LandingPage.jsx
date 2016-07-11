@@ -1,43 +1,51 @@
 /*
-LandingPage.jsx
---------------------
-PAGE
---------------------
-Components used:
-- MainSlide
-- VideoSlide
-- BackgroundSlide
+ LandingPage.jsx
+ --------------------
+ PAGE
+ --------------------
+ Components used:
+ - MainSlide
+ - VideoSlide
+ - BackgroundSlide
  */
 
 
 import React from 'react';
 import MainSlide from './MainSlide.jsx';
-import VideoSlide from './VideoSlide.jsx';
-import BackgroundSlide from './BackgroundSlide.jsx';
+import LandingPageInformation from './LandingPageInformation.jsx';
+
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+}
 
 export default class LandingPage extends React.Component {
-
-  scrollToVideo(){
-      $('html, body').animate({
-        scrollTop: $('#videoSlide').offset().top
-      }, 1000);
-  }
-
-  constructor(){
+  constructor() {
     super();
 
     this.state = {
       displaySlide: 0
-    }
+    };
   }
 
+  learnMore() {
+    $('#mainSlide').animate({
+      opacity: 0
+    }, 1000, ()=> {
+      this.setState({
+        displaySlide: 1
+      });
+    })
+  }
 
   render() {
     return (
-      <div>
-        <MainSlide scrollToVideo={this.scrollToVideo}/>
-        <VideoSlide/>
-        <BackgroundSlide/>
+      <div className="landing-main-slide">
+        {this.state.displaySlide == 0 ? <MainSlide learnMore={this.learnMore.bind(this)}/> : <LandingPageInformation/>}
       </div>
     )
   }

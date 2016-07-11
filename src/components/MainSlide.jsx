@@ -11,10 +11,12 @@ import React from 'react';
 
 
 /*
-CSS as JS key:value object/struct.
+ CSS as JS key:value object/struct.
  */
 const styles = {
   container: {
+    width: '100vw',
+    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -38,6 +40,10 @@ const styles = {
 
  */
 export default class MainSlide extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   logoMouseEnter(e) {
     const $logo = $('#' + e.target.id);
 
@@ -55,11 +61,10 @@ export default class MainSlide extends React.Component {
   }
 
   buttonMouseEnter(e) {
-    console.log("clicked");
     const $button = $('#' + e.target.id);
 
     $button.animate({
-      backgroundColor: 'rgba(0,0,0,  0.5)',
+      backgroundColor: 'rgba(0,0,0,0.5)',
       borderColor: "white"
     }, 150);
   }
@@ -73,8 +78,8 @@ export default class MainSlide extends React.Component {
     }, 500);
   }
 
-  render(){
-    return  <div className="landing-main-slide" style={styles.container}>
+  render() {
+    return <div id="mainSlide" style={styles.container}>
       <img id="logo" style={styles.logo}
            src="../static/img/Ucligem_logo.png"
            alt=""
@@ -83,7 +88,7 @@ export default class MainSlide extends React.Component {
       <button id="button" className="btn btn-primary" style={styles.button}
               onMouseEnter={this.buttonMouseEnter.bind(this)}
               onMouseLeave={this.buttonMouseLeave.bind(this)}
-              onClick={this.props.scrollToVideo}>LEARN MORE
+              onClick={this.props.learnMore}>LEARN MORE
       </button>
     </div>
   }
