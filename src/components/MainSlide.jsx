@@ -11,10 +11,12 @@ import React from 'react';
 
 
 /*
-CSS as JS key:value object/struct.
+ CSS as JS key:value object/struct.
  */
 const styles = {
   container: {
+    width: '100vw',
+    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -26,11 +28,11 @@ const styles = {
   },
   button: {
     opacity: 1,
-    backgroundColor: "#336666",
+    backgroundColor: "transparent",
     fontFamily: "Andale Mono",
-    fontSize: "120%",
-    width: '10%',
-    border: 'solid #336666 5px'
+    fontSize: "1vw",
+    width: '10vw',
+    border: 'solid white 5px'
   }
 }
 
@@ -38,6 +40,10 @@ const styles = {
 
  */
 export default class MainSlide extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   logoMouseEnter(e) {
     const $logo = $('#' + e.target.id);
 
@@ -55,11 +61,10 @@ export default class MainSlide extends React.Component {
   }
 
   buttonMouseEnter(e) {
-    console.log("clicked");
     const $button = $('#' + e.target.id);
 
     $button.animate({
-      backgroundColor: 'transparent',
+      backgroundColor: 'rgba(0,0,0,0.5)',
       borderColor: "white"
     }, 150);
   }
@@ -68,22 +73,22 @@ export default class MainSlide extends React.Component {
     const $button = $('#' + e.target.id);
 
     $button.animate({
-      backgroundColor: '#336666',
-      borderColor: "#336666"
+      backgroundColor: 'transparent',
+      borderColor: "white"
     }, 500);
   }
 
-  render(){
-    return  <div className="landing-main-slide" style={styles.container}>
+  render() {
+    return <div id="mainSlide" style={styles.container}>
       <img id="logo" style={styles.logo}
-           src="http://2015.igem.org/wiki/images/5/56/Mind_the_gut_logo_small_frontpage.png"
+           src="../static/img/Ucligem_logo.png"
            alt=""
            onMouseEnter={this.logoMouseEnter.bind(this)}
            onMouseLeave={this.logoMouseLeave.bind(this)}/>
       <button id="button" className="btn btn-primary" style={styles.button}
               onMouseEnter={this.buttonMouseEnter.bind(this)}
               onMouseLeave={this.buttonMouseLeave.bind(this)}
-              onClick={this.props.scrollToVideo}>LEARN MORE
+              onClick={this.props.learnMore}>LEARN MORE
       </button>
     </div>
   }
