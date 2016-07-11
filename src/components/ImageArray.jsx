@@ -4,7 +4,7 @@ import ImageBlock from './ImageBlock.jsx'
 const styles = {
   imageArray: {
     display: 'flex',
-    width: '75vw',
+    width: '73vw',
     paddingBottom: '5vh',
     flexDirection: 'row',
     justifyContent: "space-between"
@@ -19,7 +19,7 @@ export default class ImageArray extends React.Component {
   render() {
     return (
       <div style={styles.imageArray}>
-        {this.props.imageArrayData.imageData.map((imageData)=>{
+        {this.props.imageArrayData.map((imageData)=>{
             return <ImageBlock id={(Math.round(Math.random()*1E12)).toString()} imageData={imageData} width="35vw" height="20vw"/>
         })}
       </div>

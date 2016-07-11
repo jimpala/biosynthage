@@ -16,6 +16,10 @@ const styles = {
 
   text: {
     position: 'relative',
+  },
+
+  imageAnchor: {
+    color: 'transparent'
   }
 }
 
@@ -59,11 +63,13 @@ export default class ImageBlock extends React.Component {
   }
 
   render() {
-    return <div id="imageDiv" style={styles.imageBlock}>
-      <div id={this.props.id} style={styles.imageBlockTextOverlay} onMouseEnter={this.imageMouseEnter.bind(this)}
-           onMouseLeave={this.imageMouseLeave.bind(this)}>
-        <p className="lead" style={styles.text}></p>
+    return <a href="#" style={styles.imageAnchor}>
+      <div id="imageDiv" style={styles.imageBlock}>
+        <div id={this.props.id} style={styles.imageBlockTextOverlay} onMouseEnter={this.imageMouseEnter.bind(this)}
+             onMouseLeave={this.imageMouseLeave.bind(this)}>
+          <p className="lead" style={styles.text}></p>
+        </div>
       </div>
-    </div>
+    </a>
   }
 }
