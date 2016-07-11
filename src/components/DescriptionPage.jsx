@@ -37,8 +37,12 @@ const styles = {
   }
 }
 
-const imageArray = ["http://2015.igem.org/wiki/images/a/a5/UCLFRONTBLOCK_1_2015.png",
-  "http://2015.igem.org/wiki/images/a/a6/UCL_MG_1643_2.jpg"];
+const imageArrayData = {
+  imageData: [
+    {image1: "http://2015.igem.org/wiki/images/a/a5/UCLFRONTBLOCK_1_2015.png", text: "This is some text."},
+    {image1: "http://2015.igem.org/wiki/images/a/a6/UCL_MG_1643_2.jpg", text: "This is some more text."}
+  ]
+}
 
 export default class DescriptionPage extends React.Component {
   render() {
@@ -52,8 +56,8 @@ export default class DescriptionPage extends React.Component {
               how we can potentially use them to
               fight
               the rising issue of mental health disorders in the modern world </p>
-            <ImageArray images={imageArray}/>
-            <ImageArray images={imageArray}/>
+            <ImageArray imageArrayData={imageArrayData}/>
+            <ImageArray imageArrayData={imageArrayData}/>
           </div>
         </div>
       </div>

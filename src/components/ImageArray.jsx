@@ -19,10 +19,9 @@ export default class ImageArray extends React.Component {
   render() {
     return (
       <div style={styles.imageArray}>
-        {this.props.images.map(image=> {
-           return <ImageBlock image={image} width="35vw" height="20vw"/>
+        {this.props.imageArrayData.imageData.map((imageData)=>{
+            return <ImageBlock id={(Math.round(Math.random()*1E12)).toString()} imageData={imageData} width="35vw" height="20vw"/>
         })}
-
       </div>
     )
   }
