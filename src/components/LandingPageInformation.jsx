@@ -21,12 +21,17 @@ const styles = {
   },
   video: {
     position: 'relative',
-    zIndex: 2
+    zIndex: 2,
+    opacity: 0
   }
 }
 
 export default class LandingPageInformation extends React.Component {
   componentDidMount() {
+    $('#landingVideo').animate({
+      opacity: 1
+    }, 1000);
+
     $('#videoDiv').animate({
       opacity: 0.75
     }, 1000)
@@ -34,10 +39,10 @@ export default class LandingPageInformation extends React.Component {
 
   render() {
     return <div style={styles.div}>
-      <div id='videoDiv' style={styles.videoDiv}>
+      <div id='videoDiv' style={styles.videoDiv} onClick={this.props.learnLess}>
       </div>
 
-      <iframe style={styles.video} width="1280" height="720" src="https://www.youtube.com/embed/IFfLCuHSZ-U"
+      <iframe id='landingVideo' style={styles.video} width="1280" height="720" src="https://www.youtube.com/embed/IFfLCuHSZ-U"
               frameborder="0" allowfullscreen></iframe>
     </div>
   }
