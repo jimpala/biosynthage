@@ -9,10 +9,20 @@
 
 import React from 'react';
 
+const styles = {
+  menu: {
+    position: 'fixed',
+    zIndex: 3,
+    backgroundColor: 'white',
+    width: '100vw'
+  }
+
+}
+
 export default class Menu extends React.Component {
   render(){
     return (
-      <div className="container">
+      <div className="container" style={styles.menu}>
       <div className="navbar-header">
         <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span className="sr-only">Toggle navigation</span>

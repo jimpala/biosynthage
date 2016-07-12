@@ -20,7 +20,8 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    opacity: 0
   },
   logo: {
     height: '40%',
@@ -42,6 +43,12 @@ const styles = {
 export default class MainSlide extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount(){
+    $('#mainSlide').animate({
+      opacity: 1
+    }, 1000)
   }
 
   logoMouseEnter(e) {
