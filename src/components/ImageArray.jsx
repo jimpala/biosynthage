@@ -5,7 +5,7 @@ const styles = {
   imageArray: {
     display: 'flex',
     width: '73vw',
-    paddingBottom: '5vh',
+    paddingTop: '5vh',
     flexDirection: 'row',
     justifyContent: "space-between"
   }

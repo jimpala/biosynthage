@@ -16,7 +16,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   textContainer: {
     display: 'flex',
@@ -25,9 +25,9 @@ const styles = {
   },
   overviewText: {
     fontSize: '500%',
-    padding: '0 0 0 0',
+    padding: '4vh 0 0 0',
     fontFamily: 'Raleway',
-    borderBottom: 'solid 3px black'
+    borderBottom: 'solid 3px black',
   }
 }
 
