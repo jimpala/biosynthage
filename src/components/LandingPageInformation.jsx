@@ -42,7 +42,8 @@ export default class LandingPageInformation extends React.Component {
       <div id='videoDiv' style={styles.videoDiv} onClick={this.props.learnLess}>
       </div>
 
-      <iframe id='landingVideo' style={styles.video} width="1280" height="720" src="https://www.youtube.com/embed/IFfLCuHSZ-U"
+      <iframe id='landingVideo' style={styles.video} width="1280" height="720"
+              src="https://www.youtube.com/embed/IFfLCuHSZ-U"
               frameborder="0" allowfullscreen></iframe>
     </div>
   }

@@ -36,7 +36,7 @@ export default class Menu extends React.Component {
         <ul className="nav navbar-nav">
           <li className="active"><a href="#">Home</a></li>
           <li><a href="#description">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#team">Team</a></li>
         </ul>
         <ul className="nav navbar-nav navbar-right">
           <li><a href="../navbar/">Default</a></li>
