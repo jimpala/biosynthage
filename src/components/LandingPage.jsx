@@ -24,6 +24,9 @@ const styles = {
 }
 
 export default class LandingPage extends React.Component {
+
+    // Appends state calibration to standard Component constructor.
+
   constructor() {
     super();
 
@@ -32,6 +35,11 @@ export default class LandingPage extends React.Component {
     };
   }
 
+  /*
+  learnMore()
+  -> Fade out logo on front.
+  -> Change displaySlide state to 1 upon finish.
+   */
   learnMore() {
     $('#mainSlide').animate({
       opacity: 0
@@ -42,6 +50,11 @@ export default class LandingPage extends React.Component {
     })
   }
 
+  /*
+  learnLess()
+  -> Fade out landing video; fade in logo.
+  -> Change displaySlide state to 0 upon finish.
+   */
   learnLess() {
     $('#mainSlide').animate({
       opacity: 1
@@ -61,6 +74,10 @@ export default class LandingPage extends React.Component {
 
   }
 
+  /*
+  render()
+
+   */
   render() {
     return (
       <div className="landing-main-slide">
