@@ -46,3 +46,37 @@
     overflow: hidden;
     padding: 0;
 }
+
+
+
+
+
+
+.teamMemberHighlightOverlay-appear {
+    opacity: 0.01;
+}
+
+.teamMemberHighlightOverlay-appear.teamMemberHighlightOverlay-appear-active {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+}
+
+
+.teamMemberHighlightOverlay-enter {
+    opacity: 0.01;
+}
+
+.teamMemberHighlightOverlay-enter.teamMemberHighlightOverlay-enter-active {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+}
+
+
+.teamMemberHighlightOverlay-leave {
+    opacity: 1;
+}
+
+.teamMemberHighlightOverlay-leave.teamMemberHighlightOverlay-leave-active {
+    opacity: 0.01;
+    transition: opacity .5s ease-in;
+}

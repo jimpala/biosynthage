@@ -19,10 +19,11 @@ const styles = {
     position: 'fixed',
     top: 0,
     bottom: 0,
-    width: '100vw',
+    width: '200vw',
     height: '100vh',
     backgroundColor: 'rgba(0,0,0,0.5)',
     zIndex: 1000,
+    transform: 'translate(-50%,0)'
   },
   teamPageBanner: {
     display: 'flex',
@@ -90,7 +91,7 @@ const members = {
     {image: "http://2016.igem.org/wiki/images/4/47/Ucligem_amandeep.jpg", name: "AMANDEEP", role: "CSS Developer"},
     {image: "http://2016.igem.org/wiki/images/8/87/Ucligem_Abbie.jpg", name: "ABBIE", role: "CSS Developer"},
   ],
-}
+};
 
 export default class TeamPage extends React.Component {
   constructor(props) {
@@ -98,15 +99,6 @@ export default class TeamPage extends React.Component {
 
     this.state = {
       highlightedMember: null,
-
-      displayImage: {
-        position: 'relative',
-        width: '100%',
-        height: '60%',
-        background: 'red'
-      },
-      name: '',
-      role: ''
     };
 
     this.highlightMember = this.highlightMember.bind(this);
@@ -116,61 +108,33 @@ export default class TeamPage extends React.Component {
   }
 
   highlightMember(highlightedMember) {
-    //e.preventDefault();
-    //$('#shaderDiv').show();
-    //$('#memberProfile').show();
-
-    //this.setState({
-    //
-    //  name: e.target.firstChild.firstChild.innerHTML,
-    //  role: e.target.firstChild.firstChild.nextSibling.innerHTML,
-    //  description: e.target.firstChild.firstChild.nextSibling.nextSibling.innerHTML
-    //})
-
-    console.log('highlighting member', highlightedMember);
     this.setState({highlightedMember});
   }
 
   hideHighlight() {
-    console.log('hiding the highlight');
-    this.setState({
-      highlightedMember: null,
-    });
-
-    //$('#shaderDiv').hide();
-    //$('#memberProfile').hide();
+    this.setState({highlightedMember: null});
   }
 
   memberToMemberProfile(member, key) {
     return <MemberProfile key={key}
-      image={member.image}
-      name={member.name}
-      role={member.role}
-      description={member.description}
-      memberShow={() => this.highlightMember(member)}/>
+      {...member}
+      onClick={() => this.highlightMember(member)}/>
   }
 
   rowToMemberGrid(members, key) {
     return <div key={key}
       style={styles.memberGrid}>
-      {members.map(this.memberToMemberProfile)})}
+      {members.map(this.memberToMemberProfile)}
     </div>
   }
 
   getOverlay(highlightedMember) {
-    console.log('getOverlay for member', highlightedMember.name);
-
     return (
-        <div style={{
-          ...styles.shaderDiv,
-        }}
-          onClick={this.hideHighlight}>
+      <div style={styles.shaderDiv}
+        onClick={this.hideHighlight}>
 
-          <MemberDescription image={highlightedMember.image}
-            name={highlightedMember.name}
-            role={highlightedMember.role}
-            description={highlightedMember.description}/>
-        </div>
+        <MemberDescription {...highlightedMember}/>
+      </div>
     );
   }
 
@@ -179,9 +143,18 @@ export default class TeamPage extends React.Component {
       <div style={styles.teamPageContainer}>
         <Menu/>
 
-        {this.state.highlightedMember == null
-          ? ''
-          : this.getOverlay(this.state.highlightedMember)}
+        <ReactCSSTransitionGroup transitionName="teamMemberHighlightOverlay"
+          transitionAppear={true}
+          transitionEnter={true}
+          transitionLeave={true}
+          transitionAppearTimeout={300}
+          transitionEnterTimeout={300}
+          transitionLeaveTimeout={300}>
+
+          {this.state.highlightedMember == null
+            ? ''
+            : this.getOverlay(this.state.highlightedMember)}
+        </ReactCSSTransitionGroup>
 
         <div style={styles.teamPageBanner}>
           <h1>Meet Our Team</h1>

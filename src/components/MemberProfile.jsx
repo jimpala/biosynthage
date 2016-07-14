@@ -20,28 +20,24 @@ const styles = {
   nameText: {},
   roleText: {
     fontWeight: '100',
-    color: 'orange'
+    color: 'white'
   },
   descText: {
     display: 'none',
   }
-}
+};
 
-export default class MemberProfile extends React.Component {
-  render() {
-    return (
-      <div style={{
+export default ({image, name, role, description, onClick}) => (
+  <div style={{
           ...styles.memberProfile,
-          background: `url("${this.props.image}") center center`,
+          background: `url("${image}") center center`,
           backgroundSize: 'cover',
         }}
-        onClick={this.props.memberShow}>
-        <div style={styles.textDiv}>
-          <h4 style={styles.nameText}>{this.props.name}</h4>
-          <h5 style={styles.roleText}>{this.props.role}</h5>
-          <h5 style={styles.descText}>{this.props.description}</h5>
-        </div>
-      </div>
-    );
-  }
-}
+    onClick={onClick}>
+    <div style={styles.textDiv}>
+      <h4 style={styles.nameText}>{name}</h4>
+      <h5 style={styles.roleText}>{role}</h5>
+      <h5 style={styles.descText}>{description}</h5>
+    </div>
+  </div>
+);
