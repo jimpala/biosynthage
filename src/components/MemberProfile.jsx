@@ -28,7 +28,7 @@ const styles = {
 };
 
 export default ({image, name, role, description, onClick}) => (
-  <div style={{
+  <a href='#team' style={{
           ...styles.memberProfile,
           background: `url("${image}") center center`,
           backgroundSize: 'cover',
@@ -39,5 +39,5 @@ export default ({image, name, role, description, onClick}) => (
       <h5 style={styles.roleText}>{role}</h5>
       <h5 style={styles.descText}>{description}</h5>
     </div>
-  </div>
+  </a>
 );
