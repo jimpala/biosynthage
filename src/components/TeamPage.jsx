@@ -8,15 +8,17 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
+    backgroundColor: '#EEEEEE',
     width: '100vw'
   },
   teamPageBanner: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100vw',
+    width: '82.5%',
     height: '22vw',
-    fontFamily: 'Open Sans'
+    fontFamily: 'Open Sans',
+    backgroundColor: 'white'
   },
   memberGrid: {
     display: 'flex',
