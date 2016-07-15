@@ -147,9 +147,9 @@ export default class TeamPage extends React.Component {
           transitionAppear={true}
           transitionEnter={true}
           transitionLeave={true}
-          transitionAppearTimeout={300}
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}>
+          transitionAppearTimeout={1000}
+          transitionEnterTimeout={1000}
+          transitionLeaveTimeout={1000}>
 
           {this.state.highlightedMember == null
             ? ''

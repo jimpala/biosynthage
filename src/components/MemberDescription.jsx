@@ -17,7 +17,7 @@ const styles = {
   memberImage: {
     position: 'relative',
     width: '100%',
-    height: '60%',
+    height: '52%',
     backgroundColor: 'red'
   },
 
