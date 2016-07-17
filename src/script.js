@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Router, Route } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { hashHistory } from 'react-router';
 
 // Import App.jsx (base jsx file)
 import App from './components/App.jsx';
 
 // Import 'page' .jsx files
-import LandingPage from './components/LandingPage.jsx';
-import DescriptionPage from './components/DescriptionPage.jsx';
+import LandingPage from './components/landing/LandingPage.jsx';
+import DescriptionPage from './components/description/DescriptionPage.jsx';
 
 
 
@@ -19,15 +20,16 @@ LandingPage ('/home') as IndexRoute will be routed to if
 no children match
 */
 
-var routes = (
-    <Route path="/" component={App}>
-        {/*<IndexRoute path="/home" component={LandingPage}/>*/}
-        {/*<Route path="/description" component={DescriptionPage}/>*/}
-    </Route>
+ReactDOM.render(
+    <Router history={hashHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute component={LandingPage}/>
+            {/*<Route path="/description" component={DescriptionPage}/>*/}
+        </Route>
+    </Router>,
+    document.getElementById('react-container')
 );
 
-// Render ReactDOM with chosen routing; set App.jsx as the base .jsx file.
-ReactDOM.render(<Router>{routes}</Router>, document.getElementById('react-container'));
 
 
 // ReactDOM.render(

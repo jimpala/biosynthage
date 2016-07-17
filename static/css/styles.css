@@ -7,7 +7,8 @@
 
 .landing-main-slide {
     position: relative;
-    background: #000 url("https://upload.wikimedia.org/wikipedia/commons/6/65/DNA_com_GGN.jpg") center center;
+    background: #000 url("../img/dna.jpg") center center;
+    /*-webkit-filter: grayscale(100%) blur(10px);*/
     width: 100vw;
     height: 100vh;
     background-size: cover;

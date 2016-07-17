@@ -11,7 +11,7 @@
 
 
 import React from 'react';
-import MainSlide from './MainSlide.jsx';
+import MainSlide from '../MainSlide.jsx';
 import LandingPageInformation from './LandingPageInformation.jsx';
 
 const styles = {
@@ -21,7 +21,7 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center'
     },
-}
+};
 
 export default class LandingPage extends React.Component {
 

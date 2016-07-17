@@ -21,11 +21,12 @@ const styles = {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        opacity: 0
+        WebkitFilter: 'unset',
     },
     logo: {
         height: '40%',
-        paddingBottom: '1%'
+        paddingBottom: '1%',
+        WebkitFilter: 'unset',
     },
     button: {
         opacity: 1,
@@ -33,7 +34,8 @@ const styles = {
         fontFamily: "Andale Mono",
         fontSize: "1vw",
         width: '10vw',
-        border: 'solid white 5px'
+        border: 'solid white 5px',
+        WebkitFilter: 'unset',
     }
 }
 

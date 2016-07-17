@@ -8,8 +8,7 @@
  */
 
 import React from 'react';
-import Menu from './Menu.jsx';
-import ImageArray from './ImageArray.jsx'
+import ImageArray from '../ImageArray.jsx'
 
 const styles = {
   container: {
@@ -29,7 +28,7 @@ const styles = {
     fontFamily: 'Raleway',
     borderBottom: 'solid 3px black',
   }
-}
+};
 
 const imageArrayData = {
   imageData1: [
@@ -40,13 +39,12 @@ const imageArrayData = {
     {image1: "https://upload.wikimedia.org/wikipedia/commons/b/be/Google_Glass_with_frame.jpg", text: "This is some more text."},
     {image1: "https://static.pexels.com/photos/9352/glass-time-watch-business.jpg", text: "This is some more text."}
   ]
-}
+};
 
 export default class DescriptionPage extends React.Component {
   render() {
     return (
       <div>
-        <Menu/>
         <div className="description-background" style={styles.container}>
           <h1 className="display-1" style={styles.overviewText}>Overview</h1>
 

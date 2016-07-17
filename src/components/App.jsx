@@ -12,15 +12,16 @@ import Menu from './Menu.jsx';
 
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+    constructor(props) {
+        super(props);
+    }
 
-  render() {
-    return (
-      <div>
-        <Menu/>
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div>
+                <Menu/>
+                {this.props.children}
+            </div>
+        )
+    }
 }
