@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Rounded Elegance';
+    src: url("../font/Rounded_Elegance.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
 .landing-main-slide {
     position: relative;
     background: #000 url("https://upload.wikimedia.org/wikipedia/commons/6/65/DNA_com_GGN.jpg") center center;

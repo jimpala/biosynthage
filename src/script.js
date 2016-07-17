@@ -21,8 +21,8 @@ no children match
 
 var routes = (
     <Route path="/" component={App}>
-        <IndexRoute path="/home" component={LandingPage}/>
-        <Route path="/description" component={DescriptionPage}/>
+        {/*<IndexRoute path="/home" component={LandingPage}/>*/}
+        {/*<Route path="/description" component={DescriptionPage}/>*/}
     </Route>
 );
 

@@ -8,7 +8,7 @@
  */
 
 import React from 'react';
-
+import {Link} from 'react-router';
 
 // export default class Menu extends React.Component {
 //   render(){
@@ -43,49 +43,76 @@ import React from 'react';
 const styles = {
     header: {
         display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         position: 'fixed',
         zIndex: 3,
-        backgroundColor: 'rgba(0, 66, 119, 0.8)',
-        borderBottom: '1px solid #DADFE1',
+        backgroundColor: 'rgba(0, 66, 119, 0.9)',
+        borderBottom: '1px solid',
         borderBottomColor: 'rgba(255, 255, 255, 0.8)',
-        opacity: 0.8,
-        height: '44px',
+        height: '80px',
         width: '100vw',
-        paddingTop: '25px',
-        paddingBottom: '25px',
+        boxShadow: '0 0 5px rgba(0,0,0,0.5)',
     },
     container: {
-
+        height: '60px',
+        width: '100vw',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(0,0,0,0)',
     },
     headerContent: {
-
+        height: '60px',
+        width: '85vw',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
     navLogo: {
-
+        height: '50px',
+        width: '200px',
+        zIndex:'2000',
     },
     navLogoLink: {
+        height: '50px',
+        width: '200px',
+        zIndex: '1000',
 
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    navLogoInner: {
-
+    logoText: {
+        fontFamily: 'Rounded Elegance',
+        WebkitFontSmoothing: 'antialiased',
+        fontSize: '28px',
+        margin: '0px',
+        marginTop: '5px',
+        textRendering: 'optimizeLegibility',
+        color: 'white',
+    },
+    navGeneral:{
+        height: '50px',
+        width: '400px',
+        backgroundColor: 'black',
     },
 };
 
 export default class Menu extends React.Component {
     render() {
         return (
-            <header className="nav" style={styles.header}>
-                <div className="container" style={styles.container}>
+            <header style={styles.header}>
+                <div style={styles.container}>
                     <div style={styles.headerContent}>
                         <div style={styles.navLogo}>
-                            <a href="/" style={styles.navLogoLink}>
-                                <span style={styles.navLogoInner}>
-                                    <svg>
-
-                                    </svg>
-                                </span>
-                            </a>
+                            <Link to="/">
+                                <div style={styles.navLogoLink}>
+                                    <h1 style={styles.logoText}>BIOSYNTHAGE</h1>
+                                </div>
+                            </Link>
                         </div>
+                        <div style={styles.navGeneral}></div>
                     </div>
                 </div>
             </header>
