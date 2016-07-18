@@ -17,6 +17,16 @@ import '../../../static/js/cinema.js'
 
 
 const styles = {
+
+    masterContainer: {
+        position: 'relative',
+        height: '100vh',
+        width: '100vw',
+        backgroundColor: 'rgba(0,0,0,0)',
+    },
+
+
+
     container: {
         display: 'flex',
         flexDirection: 'column',
@@ -108,11 +118,14 @@ export default class LandingPage extends React.Component {
         var text = this.state.off ? "OFF" : "ON";
 
         return (
-            <div className="landing-main-slide">
-                {/*[1]*/}
-                {this.state.off ?
-                    <MainSlide key={text} toggleOnOff={this.toggleOnOff}/> :
-                    <LandingPageInformation key={text} toggleOnOff={this.toggleOnOff}/>}
+            <div style={styles.masterContainer}>
+                <div className="landing-content-container">
+                    {/*[1]*/}
+                    {this.state.off ?
+                        <MainSlide key={text} toggleOnOff={this.toggleOnOff}/> :
+                        <LandingPageInformation key={text} toggleOnOff={this.toggleOnOff}/>}
+                </div>
+                <div className="landing-background"></div>
             </div>
         )
     }

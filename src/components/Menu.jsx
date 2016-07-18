@@ -19,10 +19,10 @@ const styles = {
         justifyContent: 'center',
         position: 'fixed',
         zIndex: 3,
-        backgroundColor: 'rgba(0, 66, 119, 0.9)',
+        backgroundColor: 'rgba(0,0,0,0)',
         borderBottom: '1px solid',
         borderBottomColor: 'rgba(255, 255, 255, 0.8)',
-        height: '80px',
+        height: '120px',
         width: '100vw',
         boxShadow: '0 0 5px rgba(0,0,0,0.5)',
     },
@@ -45,6 +45,9 @@ const styles = {
         height: '50px',
         width: '200px',
         zIndex:'2000',
+
+        /*BORDER MARKER*/
+        border: '2px solid black'
     },
     navLogoLink: {
         height: '50px',
@@ -54,6 +57,8 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+
+
     },
     logoText: {
         fontFamily: 'Rounded Elegance',
@@ -68,6 +73,9 @@ const styles = {
         height: '50px',
         width: '400px',
         backgroundColor: 'black',
+
+        /*BORDER MARKER*/
+        border: '2px solid black'
     },
 };
 

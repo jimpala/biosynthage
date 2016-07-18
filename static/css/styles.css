@@ -5,15 +5,28 @@
     font-style: normal;
 }
 
-.landing-main-slide {
+.landing-content-container {
     position: relative;
-    background: #000 url("../img/dna.jpg") center center;
-    /*-webkit-filter: grayscale(100%) blur(10px);*/
+    background-color: rgba(0,0,0,0);
     width: 100vw;
     height: 100vh;
     background-size: cover;
     overflow: hidden;
     padding: 0;
+}
+
+.landing-background {
+    position: absolute;
+    background: #000 url("../img/dna.jpg") center center;
+    -webkit-filter: grayscale(100%) blur(10px);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-size: cover;
+    overflow: hidden;
+    padding: 0;
+    z-index: -100;
 }
 
 .landing-video-slide {
