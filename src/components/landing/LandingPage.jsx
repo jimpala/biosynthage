@@ -13,6 +13,8 @@
 import React from 'react';
 import MainSlide from './MainSlide.jsx';
 import LandingPageInformation from './LandingPageInformation.jsx';
+import '../../../static/js/cinema.js'
+
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 const styles = {
@@ -39,13 +41,22 @@ export default class LandingPage extends React.Component {
         // needs to occur the once.
         // Alternatively, an arrow function automatically binds the component.
 
-        this.learnMore = this.learnMore.bind(this);
-        this.learnLess = this.learnLess.bind(this);
 
         // Set initial state
+        console.log('Yes guv');
         this.state = {off: true};
+        console.log(this.state.off);
+
+        this.toggleOnOff = this.toggleOnOff.bind(this)
 
 
+    }
+
+
+    toggleOnOff() {
+
+        console.log('heya')
+        this.setState({off: !this.state.off})
     }
 
 
@@ -54,39 +65,39 @@ export default class LandingPage extends React.Component {
      -> Fade out logo on front.
      -> Change displaySlide state to 1 upon finish.
      */
-    learnMore() {
-        $('#mainSlide').animate({
-            opacity: 0
-        }, 1000, ()=> {
-            this.setState({
-                off: false
-            });
-        })
-    }
+    // learnMore() {
+    //     $('#mainSlide').animate({
+    //         opacity: 0
+    //     }, 1000, ()=> {
+    //         this.setState({
+    //             off: false
+    //         });
+    //     })
+    // }
 
     /*
      learnLess()
      -> Fade out landing video; fade in logo.
      -> Change displaySlide state to 0 upon finish.
      */
-    learnLess() {
-        $('#mainSlide').animate({
-            opacity: 1
-        }, 1000);
-
-        $('#landingVideo').animate({
-            opacity: 0
-        }, 1000);
-
-        $('#videoDiv').animate({
-            opacity: 0
-        }, 1000, ()=> {
-            this.setState({
-                off: true
-            });
-        })
-
-    }
+    // learnLess() {
+    //     $('#mainSlide').animate({
+    //         opacity: 1
+    //     }, 1000);
+    //
+    //     $('#landingVideo').animate({
+    //         opacity: 0
+    //     }, 1000);
+    //
+    //     $('#videoDiv').animate({
+    //         opacity: 0
+    //     }, 1000, ()=> {
+    //         this.setState({
+    //             off: true
+    //         });
+    //     })
+    //
+    // }
 
     /*
      render()
@@ -99,12 +110,12 @@ export default class LandingPage extends React.Component {
 
         return (
             <div className="landing-main-slide">
-                <ReactCSSTransitionGroup transitionName="landing-fade" transitionLeaveTimeout={300}
-                                         transitionEnterTimeout={300}>
+                <ReactCSSTransitionGroup transitionName="landing-fade" transitionLeaveTimeout={5000}
+                                         transitionEnterTimeout={5000}>
                     {/*[1]*/}
                     {this.state.off ?
-                        <MainSlide key={text} learnMore={this.learnMore}/> :
-                        <LandingPageInformation key={text} learnLess={this.learnLess}/>}
+                        <MainSlide key={text} toggleOnOff={this.toggleOnOff}/> :
+                        <LandingPageInformation key={text} toggleOnOff={this.toggleOnOff}/>}
                 </ReactCSSTransitionGroup>
             </div>
         )

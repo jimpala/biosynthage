@@ -44,13 +44,13 @@ const styles = {
 export default class MainSlide extends React.Component {
     constructor(props) {
         super(props);
+
+        this.buttonMouseEnter = this.buttonMouseEnter.bind(this);
+        this.buttonMouseLeave = this.buttonMouseLeave.bind(this);
+
     }
 
-    componentDidMount() {
-        $('#mainSlide').animate({
-            opacity: 1
-        }, 1000)
-    }
+
 
     /*
     logoMouseEnter(e)
@@ -103,9 +103,9 @@ export default class MainSlide extends React.Component {
                  alt=""/>
             <button id="button" className="btn btn-primary" style={styles.button}
 
-                    onMouseEnter={this.buttonMouseEnter.bind(this)}
-                    onMouseLeave={this.buttonMouseLeave.bind(this)}
-                    onClick={this.props.learnMore}>
+                    onMouseEnter={this.buttonMouseEnter}
+                    onMouseLeave={this.buttonMouseLeave}
+                    onClick={this.props.toggleOnOff}>
                 LEARN MORE
             </button>
         </div>
