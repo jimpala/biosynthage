@@ -15,7 +15,6 @@ import MainSlide from './MainSlide.jsx';
 import LandingPageInformation from './LandingPageInformation.jsx';
 import '../../../static/js/cinema.js'
 
-var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 const styles = {
     container: {
@@ -110,13 +109,10 @@ export default class LandingPage extends React.Component {
 
         return (
             <div className="landing-main-slide">
-                <ReactCSSTransitionGroup transitionName="landing-fade" transitionLeaveTimeout={5000}
-                                         transitionEnterTimeout={5000}>
-                    {/*[1]*/}
-                    {this.state.off ?
-                        <MainSlide key={text} toggleOnOff={this.toggleOnOff}/> :
-                        <LandingPageInformation key={text} toggleOnOff={this.toggleOnOff}/>}
-                </ReactCSSTransitionGroup>
+                {/*[1]*/}
+                {this.state.off ?
+                    <MainSlide key={text} toggleOnOff={this.toggleOnOff}/> :
+                    <LandingPageInformation key={text} toggleOnOff={this.toggleOnOff}/>}
             </div>
         )
     }
