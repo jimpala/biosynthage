@@ -11,8 +11,9 @@
 
 
 import React from 'react';
-import MainSlide from '../MainSlide.jsx';
+import MainSlide from './MainSlide.jsx';
 import LandingPageInformation from './LandingPageInformation.jsx';
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 const styles = {
     container: {
@@ -28,12 +29,25 @@ export default class LandingPage extends React.Component {
     // Appends state calibration to standard Component constructor.
 
     constructor() {
+        // Set 'this' characteristics by calling parent constructor.
         super();
 
-        this.state = {
-            displaySlide: 0
-        };
+        // Set binding to component instance in our constructor.
+        // It needs doing, otherwise the 'this' of the method
+        // shadows that of the component instance.
+        // Doing this in the constructor means binding only
+        // needs to occur the once.
+        // Alternatively, an arrow function automatically binds the component.
+
+        this.learnMore = this.learnMore.bind(this);
+        this.learnLess = this.learnLess.bind(this);
+
+        // Set initial state
+        this.state = {off: true};
+
+
     }
+
 
     /*
      learnMore()
@@ -45,7 +59,7 @@ export default class LandingPage extends React.Component {
             opacity: 0
         }, 1000, ()=> {
             this.setState({
-                displaySlide: 1
+                off: false
             });
         })
     }
@@ -68,7 +82,7 @@ export default class LandingPage extends React.Component {
             opacity: 0
         }, 1000, ()=> {
             this.setState({
-                displaySlide: 0
+                off: true
             });
         })
 
@@ -79,12 +93,30 @@ export default class LandingPage extends React.Component {
 
      */
     render() {
+
+        // Key dependent on state.
+        var text = this.state.off ? "OFF" : "ON";
+
         return (
             <div className="landing-main-slide">
-                {this.state.displaySlide == 0 ?
-                    <MainSlide learnMore={this.learnMore.bind(this)}/> :
-                    <LandingPageInformation learnLess={this.learnLess.bind(this)}/>}
+                <ReactCSSTransitionGroup transitionName="landing-fade" transitionLeaveTimeout={300}
+                                         transitionEnterTimeout={300}>
+                    {/*[1]*/}
+                    {this.state.off ?
+                        <MainSlide key={text} learnMore={this.learnMore}/> :
+                        <LandingPageInformation key={text} learnLess={this.learnLess}/>}
+                </ReactCSSTransitionGroup>
             </div>
         )
     }
 }
+
+/*
+ ---NOTES---
+
+ [1]
+ Ternary expression for displaySlide state here as React style discourages
+ explicit control flow.
+ Here we switch between rendering of <MainSlide> and <LandingPageInformation>
+
+ */

@@ -29,8 +29,7 @@ const styles = {
         WebkitFilter: 'unset',
     },
     button: {
-        opacity: 1,
-        backgroundColor: "transparent",
+        backgroundColor: "rgba(0,0,0,0)",
         fontFamily: "Andale Mono",
         fontSize: "1vw",
         width: '10vw',
@@ -53,22 +52,32 @@ export default class MainSlide extends React.Component {
         }, 1000)
     }
 
-    logoMouseEnter(e) {
-        const $logo = $('#' + e.target.id);
+    /*
+    logoMouseEnter(e)
+    -> Animates to translucency on mouse over.
 
-        $logo.animate({
-            opacity: '0.75'
-        }, 500);
-    }
+    Removing these methods as button props because
+    it's a stupid effect.
+     */
+    // logoMouseEnter(e) {
+    //     const $logo = $('#' + e.target.id);
+    //
+    //     $logo.animate({
+    //         opacity: '0.75'
+    //     }, 500);
+    // }
+    //
+    // logoMouseLeave(e) {
+    //     const $logo = $('#' + e.target.id);
+    //
+    //     $logo.animate({
+    //         opacity: '1'
+    //     }, 500);
+    // }
 
-    logoMouseLeave(e) {
-        const $logo = $('#' + e.target.id);
-
-        $logo.animate({
-            opacity: '1'
-        }, 500);
-    }
-
+    /*
+    but
+    */
     buttonMouseEnter(e) {
         const $button = $('#' + e.target.id);
 
@@ -91,10 +100,9 @@ export default class MainSlide extends React.Component {
         return <div id="mainSlide" style={styles.container}>
             <img id="logo" style={styles.logo}
                  src="../static/img/Ucligem_logo.png"
-                 alt=""
-                 onMouseEnter={this.logoMouseEnter.bind(this)}
-                 onMouseLeave={this.logoMouseLeave.bind(this)}/>
+                 alt=""/>
             <button id="button" className="btn btn-primary" style={styles.button}
+
                     onMouseEnter={this.buttonMouseEnter.bind(this)}
                     onMouseLeave={this.buttonMouseLeave.bind(this)}
                     onClick={this.props.learnMore}>
@@ -103,3 +111,17 @@ export default class MainSlide extends React.Component {
         </div>
     }
 }
+
+/*
+onMouseEnter = {this.buttonMouseEnter.bind(this)}
+-> onMouseEnter event handler is set equal to a function.
+-> this.buttonMouseEnter is the buttonMouseEnter(e) method
+   owned by MainSlide.
+-> .bind(this) means that this component is registered as
+   the 'this' in buttonMouseEnter(e).
+-> Browsers always pass the event object as the first
+   argument for the handler.
+-> An event object 'e' has an attribute .target which is
+   a reference to the object (node) that dispatched it.
+
+ */
