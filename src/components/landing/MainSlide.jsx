@@ -16,23 +16,25 @@ import React from 'react';
 const styles = {
     container: {
         width: '100vw',
-        height: '100vh',
+        height: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         WebkitFilter: 'unset',
+        paddingTop: '120px',
     },
     logo: {
-        height: '40%',
+        height: '250px',
         paddingBottom: '1%',
         WebkitFilter: 'unset',
     },
     button: {
         backgroundColor: "rgba(0,0,0,0)",
         fontFamily: "Andale Mono",
-        fontSize: "1vw",
-        width: '10vw',
+        fontSize: "12px",
+
+        width: '120px',
         border: 'solid white 5px',
         WebkitFilter: 'unset',
     }

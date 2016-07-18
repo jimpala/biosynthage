@@ -18,7 +18,7 @@
 .landing-background {
     position: absolute;
     background: #000 url("../img/dna.jpg") center center;
-    -webkit-filter: grayscale(100%) blur(10px);
+    -webkit-filter: grayscale(100%);
     top: 0;
     bottom: 0;
     right: 0;
@@ -29,14 +29,6 @@
     z-index: -100;
 }
 
-.landing-video-slide {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    overflow: hidden;
-    padding: 0;
-}
 
 .landing-background-slide {
     position: relative;
