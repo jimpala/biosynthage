@@ -15,15 +15,27 @@ import React from 'react';
  */
 const styles = {
     container: {
-        width: '100vw',
-        height: '100%',
+        position: 'relative',
         display: 'flex',
-        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        WebkitFilter: 'unset',
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgba(0,0,0,0)',
         paddingTop: '120px',
     },
+
+    copyDiv: {
+        width: '100%',
+        height: '100%',
+        padding: '0',
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        paddingLeft: '15vw',
+        paddingRight: '15vw',
+    },
+
     logo: {
         height: '250px',
         paddingBottom: '1%',
@@ -32,9 +44,9 @@ const styles = {
     button: {
         backgroundColor: "rgba(0,0,0,0)",
         fontFamily: "Andale Mono",
-        fontSize: "12px",
+        fontSize: "16px",
 
-        width: '120px',
+        width: '160px',
         border: 'solid white 5px',
         WebkitFilter: 'unset',
     }
@@ -53,13 +65,12 @@ export default class MainSlide extends React.Component {
     }
 
 
-
     /*
-    logoMouseEnter(e)
-    -> Animates to translucency on mouse over.
+     logoMouseEnter(e)
+     -> Animates to translucency on mouse over.
 
-    Removing these methods as button props because
-    it's a stupid effect.
+     Removing these methods as button props because
+     it's a stupid effect.
      */
     // logoMouseEnter(e) {
     //     const $logo = $('#' + e.target.id);
@@ -78,8 +89,8 @@ export default class MainSlide extends React.Component {
     // }
 
     /*
-    but
-    */
+     but
+     */
     buttonMouseEnter(e) {
         const $button = $('#' + e.target.id);
 
@@ -99,31 +110,32 @@ export default class MainSlide extends React.Component {
     }
 
     render() {
-        return <div id="mainSlide" style={styles.container}>
-            <img id="logo" style={styles.logo}
-                 src="../static/img/Ucligem_logo.png"
-                 alt=""/>
-            <button id="button" className="btn btn-primary" style={styles.button}
+        return (
+            <div id="mainSlide" style={styles.container}>
+                <div id="copyDiv" style={styles.copyDiv}>
+                    <button id="button" className="btn btn-primary" style={styles.button}
 
-                    onMouseEnter={this.buttonMouseEnter}
-                    onMouseLeave={this.buttonMouseLeave}
-                    onClick={this.props.toggleOnOff}>
-                LEARN MORE
-            </button>
-        </div>
+                            onMouseEnter={this.buttonMouseEnter}
+                            onMouseLeave={this.buttonMouseLeave}
+                            onClick={this.props.toggleOnOff}>
+                        LEARN MORE
+                    </button>
+                </div>
+            </div>
+        )
     }
 }
 
 /*
-onMouseEnter = {this.buttonMouseEnter.bind(this)}
--> onMouseEnter event handler is set equal to a function.
--> this.buttonMouseEnter is the buttonMouseEnter(e) method
-   owned by MainSlide.
--> .bind(this) means that this component is registered as
-   the 'this' in buttonMouseEnter(e).
--> Browsers always pass the event object as the first
-   argument for the handler.
--> An event object 'e' has an attribute .target which is
-   a reference to the object (node) that dispatched it.
+ onMouseEnter = {this.buttonMouseEnter.bind(this)}
+ -> onMouseEnter event handler is set equal to a function.
+ -> this.buttonMouseEnter is the buttonMouseEnter(e) method
+ owned by MainSlide.
+ -> .bind(this) means that this component is registered as
+ the 'this' in buttonMouseEnter(e).
+ -> Browsers always pass the event object as the first
+ argument for the handler.
+ -> An event object 'e' has an attribute .target which is
+ a reference to the object (node) that dispatched it.
 
  */

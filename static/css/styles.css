@@ -17,7 +17,7 @@
 
 .landing-background {
     position: absolute;
-    background: #000 url("../img/dna.jpg") center center;
+    background: #000 url("../img/neurons.jpg") center center;
     -webkit-filter: grayscale(100%);
     top: 0;
     bottom: 0;
