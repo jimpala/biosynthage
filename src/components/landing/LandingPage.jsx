@@ -61,6 +61,8 @@ export default class LandingPage extends React.Component {
 
     toggleOnOff() {
 
+
+
         this.setState({off: !this.state.off})
     }
 

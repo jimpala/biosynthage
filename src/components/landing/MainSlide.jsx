@@ -79,6 +79,7 @@ export default class MainSlide extends React.Component {
 
         this.buttonMouseEnter = this.buttonMouseEnter.bind(this);
         this.buttonMouseLeave = this.buttonMouseLeave.bind(this);
+        this.buttonClick = this.buttonClick.bind(this);
 
     }
 
@@ -123,6 +124,13 @@ export default class MainSlide extends React.Component {
         }, 500);
     }
 
+    buttonClick() {
+        $('.landing-background').toggleClass('colorIn');
+
+        var timeoutID = window.setTimeout(this.props.toggleOnOff, 2000);
+    }
+
+
     render() {
         return (
             <div id="mainSlide" style={styles.container}>
@@ -133,7 +141,7 @@ export default class MainSlide extends React.Component {
                         <button id="button" className="btn btn-primary" style={styles.button}
                                 onMouseEnter={this.buttonMouseEnter}
                                 onMouseLeave={this.buttonMouseLeave}
-                                onClick={this.props.toggleOnOff}>
+                                onClick={this.buttonClick}>
                             LEARN MORE
                         </button>
                     </div>
