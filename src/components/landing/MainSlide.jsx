@@ -17,23 +17,42 @@ const styles = {
     container: {
         position: 'relative',
         display: 'flex',
-        alignItems: 'center',
         justifyContent: 'center',
+        alignItems: 'center',
         width: '100%',
         height: '100%',
         backgroundColor: 'rgba(0,0,0,0)',
         paddingTop: '120px',
     },
 
-    copyDiv: {
-        width: '100%',
-        height: '100%',
+    billboardDiv: {
+        width: '800px',
+        height: '350px',
         padding: '0',
         display: 'flex',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'center',
-        paddingLeft: '15vw',
-        paddingRight: '15vw',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        borderRadius: '6px',
+    },
+
+    copyDiv: {
+        width: '700px',
+        height: '250px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        backgroundColor: 'rgba(0,0,0,0)',
+
+    },
+
+    copyStyle: {
+        fontSize: '50px',
+        color: 'white',
+        WebkitFontSmoothing: 'always',
+        marginBottom: '0',
+        fontFamily: 'Lato',
     },
 
     logo: {
@@ -45,6 +64,8 @@ const styles = {
         backgroundColor: "rgba(0,0,0,0)",
         fontFamily: "Andale Mono",
         fontSize: "16px",
+
+        marginTop: '35px',
 
         width: '160px',
         border: 'solid white 5px',
@@ -112,14 +133,17 @@ export default class MainSlide extends React.Component {
     render() {
         return (
             <div id="mainSlide" style={styles.container}>
-                <div id="copyDiv" style={styles.copyDiv}>
-                    <button id="button" className="btn btn-primary" style={styles.button}
-
-                            onMouseEnter={this.buttonMouseEnter}
-                            onMouseLeave={this.buttonMouseLeave}
-                            onClick={this.props.toggleOnOff}>
-                        LEARN MORE
-                    </button>
+                <div id:"billboardDiv" style={styles.billboardDiv}>
+                    <div style={styles.copyDiv}>
+                        <p style={styles.copyStyle}>Lacklustre establishing text will</p>
+                        <p style={styles.copyStyle}>sit inside of this box.</p>
+                        <button id="button" className="btn btn-primary" style={styles.button}
+                                onMouseEnter={this.buttonMouseEnter}
+                                onMouseLeave={this.buttonMouseLeave}
+                                onClick={this.props.toggleOnOff}>
+                            LEARN MORE
+                        </button>
+                    </div>
                 </div>
             </div>
         )

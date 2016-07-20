@@ -13,7 +13,6 @@
 import React from 'react';
 import MainSlide from './MainSlide.jsx';
 import LandingPageInformation from './LandingPageInformation.jsx';
-import '../../../static/js/cinema.js'
 
 
 const styles = {
