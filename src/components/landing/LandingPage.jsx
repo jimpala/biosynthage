@@ -51,9 +51,7 @@ export default class LandingPage extends React.Component {
 
 
         // Set initial state
-        console.log('Yes guv');
         this.state = {off: true};
-        console.log(this.state.off);
 
         this.toggleOnOff = this.toggleOnOff.bind(this)
 
@@ -63,7 +61,6 @@ export default class LandingPage extends React.Component {
 
     toggleOnOff() {
 
-        console.log('heya')
         this.setState({off: !this.state.off})
     }
 

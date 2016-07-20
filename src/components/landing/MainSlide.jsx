@@ -34,6 +34,7 @@ const styles = {
         alignItems: 'center',
         backgroundColor: 'rgba(0,0,0,0.5)',
         borderRadius: '6px',
+
     },
 
     copyDiv: {
@@ -47,13 +48,7 @@ const styles = {
 
     },
 
-    copyStyle: {
-        fontSize: '50px',
-        color: 'white',
-        WebkitFontSmoothing: 'always',
-        marginBottom: '0',
-        fontFamily: 'Lato',
-    },
+
 
     logo: {
         height: '250px',
@@ -70,8 +65,10 @@ const styles = {
         width: '160px',
         border: 'solid white 5px',
         WebkitFilter: 'unset',
+
+
     }
-}
+};
 
 /*
 
@@ -85,29 +82,25 @@ export default class MainSlide extends React.Component {
 
     }
 
+    componentDidMount(){
+        const $copy1 = $('#copyLine1');
+        const $copy2 = $('#copyLine2');
 
-    /*
-     logoMouseEnter(e)
-     -> Animates to translucency on mouse over.
+        function copyIn($copy){
+            $copy.toggleClass('fadeIn');
+        }
 
-     Removing these methods as button props because
-     it's a stupid effect.
-     */
-    // logoMouseEnter(e) {
-    //     const $logo = $('#' + e.target.id);
-    //
-    //     $logo.animate({
-    //         opacity: '0.75'
-    //     }, 500);
-    // }
-    //
-    // logoMouseLeave(e) {
-    //     const $logo = $('#' + e.target.id);
-    //
-    //     $logo.animate({
-    //         opacity: '1'
-    //     }, 500);
-    // }
+        var timeoutID = window.setTimeout(copyIn.bind(null, $copy1), 1000)
+        var timeoutID = window.setTimeout(copyIn.bind(null, $copy2), 2000)
+
+        // $copy1.ready(function(){
+        //     console.log('yeah')
+        //     $copy1.toggleClass('fadeIn');
+        //     $copy2.delay(1000).toggleClass('fadeIn');
+        // });
+    }
+
+
 
     /*
      but
@@ -133,10 +126,10 @@ export default class MainSlide extends React.Component {
     render() {
         return (
             <div id="mainSlide" style={styles.container}>
-                <div id:"billboardDiv" style={styles.billboardDiv}>
+                <div id="billboardDiv" style={styles.billboardDiv}>
                     <div style={styles.copyDiv}>
-                        <p style={styles.copyStyle}>Lacklustre establishing text will</p>
-                        <p style={styles.copyStyle}>sit inside of this box.</p>
+                        <p id="copyLine1" className="copyStyle">Lacklustre establishing text will</p>
+                        <p id="copyLine2" className="copyStyle">sit inside of this box.</p>
                         <button id="button" className="btn btn-primary" style={styles.button}
                                 onMouseEnter={this.buttonMouseEnter}
                                 onMouseLeave={this.buttonMouseLeave}

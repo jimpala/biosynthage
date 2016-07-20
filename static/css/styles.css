@@ -1,8 +1,25 @@
+/* FONT IMPORTS */
+
 @font-face {
     font-family: 'Rounded Elegance';
     src: url("../font/Rounded_Elegance.ttf");
     font-weight: normal;
     font-style: normal;
+}
+
+.copyStyle {
+    font-size: 50px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 0;
+    font-family: Lato;
+    opacity: 0;
+
+    -webkit-transition: opacity 1.5s ease-in
+}
+
+.fadeIn {
+    opacity: 1;
 }
 
 .landing-content-container {
@@ -82,3 +99,5 @@
     opacity: 0.01;
     transition: opacity 1000ms ease-in;
 }
+
+
