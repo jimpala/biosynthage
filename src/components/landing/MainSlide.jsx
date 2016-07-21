@@ -91,8 +91,8 @@ export default class MainSlide extends React.Component {
             $copy.toggleClass('fadeIn');
         }
 
-        var timeoutID = window.setTimeout(copyIn.bind(null, $copy1), 1000)
-        var timeoutID = window.setTimeout(copyIn.bind(null, $copy2), 2000)
+        window.setTimeout(copyIn.bind(null, $copy1), 1000);
+        window.setTimeout(copyIn.bind(null, $copy2), 2000);
 
         // $copy1.ready(function(){
         //     console.log('yeah')
@@ -125,9 +125,12 @@ export default class MainSlide extends React.Component {
     }
 
     buttonClick() {
-        $('.landing-background').toggleClass('colorIn');
+        console.log(this.props.first + " guv");
+        if (this.props.first){
+            $('.landing-background').toggleClass('colorIn')
+        }
 
-        var timeoutID = window.setTimeout(this.props.toggleOnOff, 2000);
+        window.setTimeout(this.props.toggleOnOff, 2000);
     }
 
 

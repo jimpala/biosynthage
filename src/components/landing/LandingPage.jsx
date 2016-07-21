@@ -51,7 +51,8 @@ export default class LandingPage extends React.Component {
 
 
         // Set initial state
-        this.state = {off: true};
+        this.state = {off: true,
+        clickOne: true,};
 
         this.toggleOnOff = this.toggleOnOff.bind(this)
 
@@ -61,9 +62,8 @@ export default class LandingPage extends React.Component {
 
     toggleOnOff() {
 
-
-
-        this.setState({off: !this.state.off})
+        this.setState({clickOne: false});
+        this.setState({off: !this.state.off});
     }
 
 
@@ -104,7 +104,7 @@ export default class LandingPage extends React.Component {
     //         });
     //     })
     //
-    // }
+    //
 
     /*
      render()
@@ -114,13 +114,16 @@ export default class LandingPage extends React.Component {
 
         // Key dependent on state.
         var text = this.state.off ? "OFF" : "ON";
+        console.log(this.state.clickOne)
+        console.log(this.state.off)
 
         return (
+
             <div style={styles.masterContainer}>
                 <div className="landing-content-container">
                     {/*[1]*/}
                     {this.state.off ?
-                        <MainSlide key={text} toggleOnOff={this.toggleOnOff}/> :
+                        <MainSlide key={text} toggleOnOff={this.toggleOnOff} first={this.state.clickOne}/> :
                         <LandingPageInformation key={text} toggleOnOff={this.toggleOnOff}/>}
                 </div>
                 <div className="landing-background"></div>
