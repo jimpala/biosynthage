@@ -37,10 +37,12 @@ export default class LandingPageInformation extends React.Component {
 
     render() {
         return (
-            <div id='videoDiv' style={styles.videoDiv} onClick={this.props.toggleOnOff}>
-                <iframe id='landingVideo' className="cinema" style={styles.video} width="500" height="200"
-                        src="https://www.youtube.com/embed/IFfLCuHSZ-U"
-                        frameBorder="0"></iframe>
+            <div id="mainSlide" style={styles.container}>
+                <div id="billboardDiv" style={styles.billboardDiv}>
+                    <iframe id='landingVideo' className="cinema" style={styles.video} width="500" height="200"
+                            src="https://www.youtube.com/embed/IFfLCuHSZ-U"
+                            frameBorder="0"></iframe>
+                </div>
             </div>
         )
     }
