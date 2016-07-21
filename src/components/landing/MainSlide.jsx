@@ -125,26 +125,29 @@ export default class MainSlide extends React.Component {
     buttonClick() {
 
         if (this.props.first) {
-            $('.landing-background').css('-webkit-filter', 'grayscale(0%)')
+            $('.landing-background').css('-webkit-filter', 'grayscale(0%)');
+
+            // This selector should cover opacity of all children
+            const $billboard_all = $('#billboardDiv');
+
+            // oh dear... context management here.
+            let that = this;
+
+            let stateTimeout;
+            let fadeOutTimeout = setTimeout((function () {
+                $billboard_all.css('-webkit-transition', 'opacity 1.0s ease-in');
+                $billboard_all.css('opacity', '0');
+
+                stateTimeout = setTimeout((function () {
+                    console.log(that.props.first);
+                    that.props.toggleOnOff();
+                }), 1000)
+            }), 1000);
         }
 
-        // window.setTimeout(this.props.toggleOnOff, 2000);
-
-        const $billboard_all = $('#billboardDiv');
-
-        // oh dear...
-        let that = this;
-
-        let stateTimeout;
-        let fadeOutTimeout = setTimeout((function () {
-            $billboard_all.css('-webkit-transition', 'opacity 1.0s ease-in');
-            $billboard_all.css('opacity', '0');
-
-            stateTimeout = setTimeout((function () {
-                console.log(that.props.first);
-                that.props.toggleOnOff();
-            }), 1000)
-        }), 1000);
+        else {
+            this.props.toggleOnOff();
+        }
     }
 
 

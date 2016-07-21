@@ -47,6 +47,11 @@ const styles = {
 
         borderLeft: '1px solid white',
     },
+
+    homeLink: {
+        color: 'rgba(0,0,0,0)',
+    },
+
     navLogoLink: {
         height: '60px',
         width: '300px',
@@ -109,7 +114,7 @@ export default class Menu extends React.Component {
                 <div style={styles.container}>
                     <div style={styles.headerContent}>
                         <div style={styles.navLogo}>
-                            <Link to="/" >
+                            <Link activeStyle={styles.homeLink} to="/" >
                                 <div style={styles.navLogoLink}>
 
                                     <h1 style={styles.logoText}>BIOSYNTHAGE</h1>
