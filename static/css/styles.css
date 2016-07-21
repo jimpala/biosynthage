@@ -18,9 +18,7 @@
     -webkit-transition: opacity 1.5s ease-in
 }
 
-.fadeIn {
-    opacity: 1;
-}
+
 
 
 
@@ -84,28 +82,4 @@
     overflow: hidden;
     padding: 0;
 }
-
-.cinema {
-
-}
-
-.landing-fade-enter {
-    opacity: 0.01;
-
-}
-
-.landing-fade-enter.landing-fade-enter-active {
-    opacity: 1;
-    -webkit-transition: opacity 2000ms ease-in;
-}
-
-.landing-fade-leave {
-    opacity: 1;
-}
-
-.landing-fade-leave.landing-fade-leave-active {
-    opacity: 0.01;
-    transition: opacity 1000ms ease-in;
-}
-
 

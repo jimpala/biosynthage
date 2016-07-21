@@ -49,7 +49,6 @@ const styles = {
     },
 
 
-
     logo: {
         height: '250px',
         paddingBottom: '1%',
@@ -83,12 +82,12 @@ export default class MainSlide extends React.Component {
 
     }
 
-    componentDidMount(){
+    componentDidMount() {
         const $copy1 = $('#copyLine1');
         const $copy2 = $('#copyLine2');
 
-        function copyIn($copy){
-            $copy.toggleClass('fadeIn');
+        function copyIn($copy) {
+            $copy.css('opacity', '1');
         }
 
         window.setTimeout(copyIn.bind(null, $copy1), 1000);
@@ -100,7 +99,6 @@ export default class MainSlide extends React.Component {
         //     $copy2.delay(1000).toggleClass('fadeIn');
         // });
     }
-
 
 
     /*
@@ -125,12 +123,28 @@ export default class MainSlide extends React.Component {
     }
 
     buttonClick() {
-        console.log(this.props.first + " guv");
-        if (this.props.first){
-            $('.landing-background').toggleClass('colorIn')
+
+        if (this.props.first) {
+            $('.landing-background').css('-webkit-filter', 'grayscale(0%)')
         }
 
-        window.setTimeout(this.props.toggleOnOff, 2000);
+        // window.setTimeout(this.props.toggleOnOff, 2000);
+
+        const $billboard_all = $('#billboardDiv');
+
+        // oh dear...
+        let that = this;
+
+        let stateTimeout;
+        let fadeOutTimeout = setTimeout((function () {
+            $billboard_all.css('-webkit-transition', 'opacity 1.0s ease-in');
+            $billboard_all.css('opacity', '0');
+
+            stateTimeout = setTimeout((function () {
+                console.log(that.props.first);
+                that.props.toggleOnOff();
+            }), 1000)
+        }), 1000);
     }
 
 

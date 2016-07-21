@@ -64,6 +64,7 @@ export default class LandingPage extends React.Component {
 
         this.setState({clickOne: false});
         this.setState({off: !this.state.off});
+        console.log('yo!')
     }
 
 
@@ -114,8 +115,6 @@ export default class LandingPage extends React.Component {
 
         // Key dependent on state.
         var text = this.state.off ? "OFF" : "ON";
-        console.log(this.state.clickOne)
-        console.log(this.state.off)
 
         return (
 
