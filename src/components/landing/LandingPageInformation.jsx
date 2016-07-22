@@ -10,13 +10,13 @@ const styles = {
         width: '100%',
         height: '100%',
         backgroundColor: 'rgba(0,0,0,0)',
-        paddingTop: '120px',
+        paddingTop: '60px',
     },
 
 
     billboardDiv: {
-        width: '85vw',
-        height: '500px',
+        width: '800px',
+        height: '450px',
         padding: '0',
         display: 'flex',
         justifyContent: 'center',
