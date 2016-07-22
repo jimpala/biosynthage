@@ -154,6 +154,7 @@ export default class Menu extends React.Component {
             <header className="slimHeader">
                 <div className="navWrapper">
                     <div className="logoWrap">
+                        <img id="logo" src="../static/img/UCLigem_icon.png" alt=""/>
                         <h1 className="logoText">BIOSYNTHAGE</h1>
                     </div>
                     <ul className="navOptionsList">
