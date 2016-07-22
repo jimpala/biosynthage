@@ -128,26 +128,39 @@ const styles = {
 export default class Menu extends React.Component {
     render() {
         return (
-            <header style={styles.header}>
-                <div style={styles.container}>
-                    <div style={styles.headerContent}>
-                        <div style={styles.navLogo}>
-                            <Link activeStyle={styles.homeLink} to="/">
-                                <div style={styles.navLogoLink}>
+            // <header style={styles.header}>
+            //     <div style={styles.container}>
+            //         <div style={styles.headerContent}>
+            //             <div style={styles.navLogo}>
+            //                 <Link activeStyle={styles.homeLink} to="/">
+            //                     <div style={styles.navLogoLink}>
+            //
+            //                         <h1 style={styles.logoText}>BIOSYNTHAGE</h1>
+            //                         <p style={styles.subtitleLogo}>UCL iGEM Team 2016</p>
+            //                     </div>
+            //                 </Link>
+            //             </div>
+            //             <div style={styles.navGeneral}>
+            //                 <div style={styles.navBlock}>
+            //                     <p style={styles.navText}>TEAM</p>
+            //                 </div>
+            //                 <div style={styles.navBlock}></div>
+            //                 <div style={styles.navBlock}></div>
+            //             </div>
+            //         </div>
+            //     </div>
+            // </header>
 
-                                    <h1 style={styles.logoText}>BIOSYNTHAGE</h1>
-                                    <p style={styles.subtitleLogo}>UCL iGEM Team 2016</p>
-                                </div>
-                            </Link>
-                        </div>
-                        <div style={styles.navGeneral}>
-                            <div style={styles.navBlock}>
-                                <p style={styles.navText}>TEAM</p>
-                            </div>
-                            <div style={styles.navBlock}></div>
-                            <div style={styles.navBlock}></div>
-                        </div>
+            <header className="slimHeader">
+                <div className="navWrapper">
+                    <div className="logoWrap">
+                        <h1 className="logoText">BIOSYNTHAGE</h1>
                     </div>
+                    <ul className="navOptionsList">
+                        <li className="navOptions">About</li>
+                        <li className="navOptions">Team</li>
+                        <li className="navOptions">Contact</li>
+                    </ul>
                 </div>
             </header>
         )

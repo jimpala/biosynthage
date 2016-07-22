@@ -7,6 +7,19 @@
     font-style: normal;
 }
 
+/* GENERAL */
+
+body {
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: Lato;
+}
+
+
+
+
 .copyStyle {
     font-size: 50px;
     color: white;
@@ -83,3 +96,80 @@
     padding: 0;
 }
 
+
+/* SLIMLINE NAV */
+
+.slimHeader {
+    background-color: rgba(0,0,0,0);
+    position: fixed;
+    height: 60px;
+    top: 0;
+    z-index: 4;
+    width: 100%;
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.navWrapper {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0);
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoWrap {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.navOptionsList {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    width: 500px;
+    height: 98%;
+    margin: 0;
+    margin-bottom: 2%;
+    padding: 0;
+
+
+}
+
+/* inline-flex means that the inline content (stuff
+   between the tags) will exhibit flex behaviour.
+*/
+.navOptions {
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    margin-left: 45px;
+    margin-bottom: 10px;
+
+    font-family: Lato;
+    color: whitesmoke;
+    font-size: 18px;
+
+    border-top: whitesmoke solid 4px;
+    border-bottom: ghostwhite solid 1px;
+}
+
+.navOptionsList:first-child{
+    margin-left: 0;
+}
+
+.logoText {
+    font-family: "Rounded Elegance";
+    color: white;
+    font-size: 38px;
+    margin: 0;
+    text-rendering: geometricPrecision;
+
+}
