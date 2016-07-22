@@ -139,7 +139,6 @@ export default class MainSlide extends React.Component {
                 $billboard_all.css('opacity', '0');
 
                 stateTimeout = setTimeout((function () {
-                    console.log(that.props.first);
                     that.props.toggleOnOff();
                 }), 1000)
             }), 1000);

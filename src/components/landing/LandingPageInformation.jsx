@@ -15,16 +15,18 @@ const styles = {
 
 
     billboardDiv: {
-        width: '800px',
-        height: '350px',
+        width: '85vw',
+        height: '500px',
         padding: '0',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'rgba(0,0,0,0.5)',
+        backgroundColor: 'rgba(0,0,0,0.8)',
         borderRadius: '6px',
+        opacity: '0',
+        overflow: 'hidden',
 
-
+        WebkitTransition: 'opacity 1.0s ease-in',
 
     },
 
@@ -32,6 +34,8 @@ const styles = {
     video: {
         position: 'relative',
         zIndex: 2,
+
+        borderRadius: '5px',
     }
 };
 
@@ -42,7 +46,16 @@ export default class LandingPageInformation extends React.Component {
     }
 
     componentDidMount() {
+        if (this.props.second){
+            setTimeout( () => {
+                $('#billboardDiv').css('opacity', '1');
+            } ,500);
+        }
 
+        else{
+            $('#billboardDiv').css('-webkit-transition', 'unset');
+            $('#billboardDiv').css('opacity', '1');
+        }
     }
 
 
@@ -50,9 +63,9 @@ export default class LandingPageInformation extends React.Component {
         return (
             //[1]
             <div id="mainSlide" style={styles.container} onClick={this.props.toggleOnOff}>
-                <div id="billboardDiv" style={styles.billboardDiv}>
-                    <iframe id='landingVideo' className="cinema" style={styles.video} width="500" height="200"
-                            src="https://www.youtube.com/embed/IFfLCuHSZ-U"
+                <div id="billboardDiv" style={styles.billboardDiv} onClick={this.props.toggleOnOff}>
+                    <iframe id='landingVideo' className="cinema" style={styles.video} width="600" height="337"
+                            src="https://www.youtube.com/embed/W2gOIFxCWZ4"
                             frameBorder="0"></iframe>
                 </div>
             </div>
