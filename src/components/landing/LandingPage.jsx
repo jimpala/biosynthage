@@ -59,6 +59,24 @@ export default class LandingPage extends React.Component {
         this.toggleOnOff = this.toggleOnOff.bind(this)
 
 
+
+
+
+    }
+
+    componentDidMount(){
+
+        let $logo = $('#logo');
+        $logo.css('-webkit-filter', 'grayscale(100%)');
+    }
+
+    componentWillUnmount(){
+
+        // Un-grayscale upon exit.
+
+        let $logo = $('#logo');
+
+        $logo.css('-webkit-filter', 'grayscale(0%)');
     }
 
 
