@@ -158,7 +158,7 @@ body {
     font-size: 18px;
 
     border-top: whitesmoke solid 4px;
-    border-bottom: ghostwhite solid 1px;
+    border-bottom: ghostwhite solid 2px;
 }
 
 .navOptionsList:first-child{
@@ -175,7 +175,7 @@ body {
     font-family: Noto Sans;
     -webkit-font-smoothing: antialiased;
     font-size: 36px;
-    margin: 0px 0px 0px 5px;
+    margin: 0 0 0 5px;
     text-rendering: optimizeLegibility;
     color: white;
 
@@ -190,4 +190,13 @@ body {
     width: auto;
 
     -webkit-filter: grayscale(100%);
+}
+
+.menuDivider {
+    position: absolute;
+
+    width: 800px;
+    height: 14px;
+    border-bottom: whitesmoke solid 1px;
+    opacity: 0.6;
 }

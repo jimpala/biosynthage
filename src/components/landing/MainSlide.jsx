@@ -153,6 +153,7 @@ export default class MainSlide extends React.Component {
     render() {
         return (
             <div id="mainSlide" style={styles.container}>
+                <div className="menuDivider"></div>
                 <div id="billboardDiv" style={styles.billboardDiv}>
                     <div style={styles.copyDiv}>
                         <p id="copyLine1" className="copyStyle">Lacklustre establishing text will</p>

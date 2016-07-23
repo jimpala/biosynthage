@@ -46,15 +46,18 @@ export default class LandingPageInformation extends React.Component {
     }
 
     componentDidMount() {
+
+        let $billboardDiv = $('#billboardDiv');
+
         if (this.props.second){
             setTimeout( () => {
-                $('#billboardDiv').css('opacity', '1');
+                $billboardDiv.css('opacity', '1');
             } ,500);
         }
 
         else{
-            $('#billboardDiv').css('-webkit-transition', 'unset');
-            $('#billboardDiv').css('opacity', '1');
+            $billboardDiv.css('-webkit-transition', 'unset');
+            $billboardDiv.css('opacity', '1');
         }
     }
 
@@ -63,6 +66,7 @@ export default class LandingPageInformation extends React.Component {
         return (
             //[1]
             <div id="mainSlide" style={styles.container} onClick={this.props.toggleOnOff}>
+                <div className="menuDivider"></div>
                 <div id="billboardDiv" style={styles.billboardDiv} onClick={this.props.toggleOnOff}>
                     <iframe id='landingVideo' className="cinema" style={styles.video} width="600" height="337"
                             src="https://www.youtube.com/embed/W2gOIFxCWZ4"
