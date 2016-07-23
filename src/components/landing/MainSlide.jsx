@@ -102,7 +102,8 @@ export default class MainSlide extends React.Component {
 
 
     /*
-     but
+    @biosynthage
+    ISSUE #17
      */
     buttonMouseEnter(e) {
         const $button = $('#' + e.target.id);
@@ -113,6 +114,10 @@ export default class MainSlide extends React.Component {
         }, 150);
     }
 
+    /*
+     @biosynthage
+     ISSUE #17
+     */
     buttonMouseLeave(e) {
         const $button = $('#' + e.target.id);
 
@@ -122,6 +127,7 @@ export default class MainSlide extends React.Component {
         }, 500);
     }
 
+
     buttonClick() {
 
         if (this.props.first) {
@@ -130,10 +136,12 @@ export default class MainSlide extends React.Component {
             // This selector should cover opacity of all children
             const $billboard_all = $('#billboardDiv');
 
-            // oh dear... context management here.
+            // Emergency context management (ugly I know).
             let that = this;
 
             let stateTimeout;
+
+            // Would be better to use ES6 anonymous arrow functions here.
             let fadeOutTimeout = setTimeout((function () {
                 $billboard_all.css('-webkit-transition', 'opacity 1.0s ease-in');
                 $billboard_all.css('opacity', '0');
