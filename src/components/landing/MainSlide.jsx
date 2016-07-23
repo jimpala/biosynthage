@@ -37,7 +37,7 @@ const styles = {
 
     },
 
-    copyDiv: {
+    billboardAlignDiv: {
         width: '700px',
         height: '250px',
         display: 'flex',
@@ -46,6 +46,16 @@ const styles = {
         alignItems: 'flex-start',
         backgroundColor: 'rgba(0,0,0,0)',
 
+    },
+
+    copyDiv: {
+        width: '700px',
+        height: '142px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        position: 'relative',
+        overflow: 'hidden',
     },
 
 
@@ -64,8 +74,12 @@ const styles = {
         width: '160px',
         border: 'solid white 5px',
         WebkitFilter: 'unset',
+    },
 
 
+
+    logoHeadlineStyle: {
+        fontFamily: 'Rounded Elegance',
     }
 };
 
@@ -76,30 +90,62 @@ export default class MainSlide extends React.Component {
     constructor(props) {
         super(props);
 
+        // Bindings.
         this.buttonMouseEnter = this.buttonMouseEnter.bind(this);
         this.buttonMouseLeave = this.buttonMouseLeave.bind(this);
         this.buttonClick = this.buttonClick.bind(this);
 
+
+        // Initialise copy as state (number and content).
+        this.state = {
+            weAreBiosynthage: false,
+            copyInjection:
+                <div style={styles.copyDiv}>
+                    <p id="copy1" className="copyStyle">What would you do</p>
+                    <p id="copy2" className="copyStyle">with 25 more years of your life?</p>
+                </div>,
+        }
+
     }
 
     componentDidMount() {
-        const $copy1 = $('#copyLine1');
-        const $copy2 = $('#copyLine2');
 
-        function copyIn($copy) {
-            $copy.css('opacity', '1');
-        }
+        let copy1 = document.getElementById('copy1');
+        let copy2 = document.getElementById('copy2');
 
-        window.setTimeout(copyIn.bind(null, $copy1), 1000);
-        window.setTimeout(copyIn.bind(null, $copy2), 2000);
+        setTimeout(() => {
+            copy1.style.opacity = 1;
+        },1000);
+        setTimeout(() => {
+            copy2.style.opacity = 1;
+        },2000);
+        setTimeout(() => {
+            copy1.style.opacity = 0;
+            copy2.style.opacity = 0;
+        },5000);
+        setTimeout(()=>{
+            this.setState({copyInjection:
+                <div style={styles.copyDiv}>
+                    <p id="copy1" className="copyStyle">We are  <span id="logoTextSpan">BIOSYNTHAGE</span>.</p>
+                </div>,
+                weAreBiosynthage: true,
+            });
+        },6500);
 
-        // $copy1.ready(function(){
-        //     console.log('yeah')
-        //     $copy1.toggleClass('fadeIn');
-        //     $copy2.delay(1000).toggleClass('fadeIn');
-        // });
     }
 
+    componentDidUpdate(){
+        if (this.state.weAreBiosynthage == true) {
+            let copy1 = document.getElementById('copy1');
+            let logoTextSpan = document.getElementById('logoTextSpan');
+
+            setTimeout(() => {
+                copy1.style.opacity = 1;
+                logoTextSpan.style.opacity = 1;
+            },1000);
+
+        }
+    }
 
     /*
     @biosynthage
@@ -163,9 +209,8 @@ export default class MainSlide extends React.Component {
             <div id="mainSlide" style={styles.container}>
                 <div className="menuDivider"></div>
                 <div id="billboardDiv" style={styles.billboardDiv}>
-                    <div style={styles.copyDiv}>
-                        <p id="copyLine1" className="copyStyle">Lacklustre establishing text will</p>
-                        <p id="copyLine2" className="copyStyle">sit inside of this box.</p>
+                    <div style={styles.billboardAlignDiv}>
+                        {this.state.copyInjection}
                         <button id="button" className="btn btn-primary" style={styles.button}
                                 onMouseEnter={this.buttonMouseEnter}
                                 onMouseLeave={this.buttonMouseLeave}
