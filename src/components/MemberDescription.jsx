@@ -6,10 +6,10 @@ const styles = {
     margin: 'auto',
     top: '50%',
     left: '50%',
-    marginLeft: '-300px',
-    marginTop: '-400px',
-    height: '800px',
-    width: '600px',
+    marginLeft: '-15vw',
+    marginTop: '-20vw',
+    height: '40vw',
+    width: '30vw',
     backgroundColor: 'white',
     zIndex: 1001
   },
@@ -30,12 +30,17 @@ const styles = {
   },
 
   nameText: {
-    fontWeight: '800'
+    fontWeight: '800',
+    fontSize: '1.5vw',
   },
   roleText: {
-    color: 'grey'
+    color: 'grey',
+    fontSize: '1vw',
+
   },
-  descText: {}
+  descText: {
+    fontSize: '1vw',
+  }
 }
 
 export default ({image, name, role, description}) => (

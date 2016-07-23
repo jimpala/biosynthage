@@ -29,7 +29,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '82.5%',
+    width: '100%',
     height: '22vw',
     fontFamily: 'Open Sans',
     backgroundColor: 'white'
@@ -39,7 +39,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    width: '82.5%'
+    width: '100%'
   },
   displayImage: {
     position: 'relative',
