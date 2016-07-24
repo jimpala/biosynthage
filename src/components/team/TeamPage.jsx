@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import Menu from './Menu.jsx'
+import Menu from '../Menu.jsx'
 import MemberProfile from './MemberProfile.jsx';
 import MemberDescription from './MemberDescription.jsx';
 

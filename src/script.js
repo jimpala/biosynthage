@@ -36,7 +36,7 @@ ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={LandingPage}/>
-            {/*<Route path="/description" component={DescriptionPage}/>*/}
+            <Route path="/description" component={DescriptionPage}/>
         </Route>
     </Router>,
     document.getElementById('react-container')
@@ -44,10 +44,3 @@ ReactDOM.render(
 
 
 
-// ReactDOM.render(
-//   <Router>
-//     <Route path="/" component={App}></Route>
-//     <Route path="/description" component={DescriptionPage}></Route>
-//   </Router>,
-//   document.getElementById('react-container')
-// )
