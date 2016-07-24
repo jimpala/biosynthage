@@ -66,7 +66,7 @@ export default class LandingPage extends React.Component {
         this.menuDispatch();
     }
 
-    componentDidMount(){
+    componentDidMount() {
 
         let $logo = $('.logo');
         $logo.css('-webkit-filter', 'grayscale(100%)');
@@ -103,6 +103,8 @@ export default class LandingPage extends React.Component {
 
 
     render() {
+
+
 
         // Key dependent on state.
         var text = this.state.off ? "OFF" : "ON";

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-import { Router, Route, IndexRoute, browserHistory, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
 // Import App.jsx (base jsx file)
 import App from './components/App.jsx';
@@ -22,6 +22,7 @@ import App from './components/App.jsx';
 // Import 'page' .jsx files
 import LandingPage from './components/landing/LandingPage.jsx';
 import DescriptionPage from './components/description/DescriptionPage.jsx';
+import TeamPage from './components/team/TeamPage';
 
 
 
@@ -41,8 +42,9 @@ Event emitter from ___Page.jsx to Menu.jsx
 ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={App}>
-            <IndexRoute component={LandingPage} routeName="landing"/>
+            <IndexRoute component={LandingPage}/>
             <Route path="/about" component={DescriptionPage}/>
+            <Route path="/team" component={TeamPage}></Route>
         </Route>
     </Router>,
     document.getElementById('react-container')
