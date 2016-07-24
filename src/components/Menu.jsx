@@ -8,43 +8,35 @@
  */
 
 import React from 'react';
+import {Link} from 'react-router';
 
-const styles = {
-  menu: {
-    position: 'fixed',
-    zIndex: 3,
-    backgroundColor: 'white',
-    width: '100vw'
-  }
 
-}
+
+
 
 export default class Menu extends React.Component {
-  render(){
-    return (
-      <div className="container" style={styles.menu}>
-      <div className="navbar-header">
-        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-        </button>
-        <a className="navbar-brand" href="#">Project name</a>
-      </div>
-      <div id="navbar" className="navbar-collapse collapse">
-        <ul className="nav navbar-nav">
-          <li className="active"><a href="#">Home</a></li>
-          <li><a href="#description">About</a></li>
-          <li><a href="#team">Team</a></li>
-        </ul>
-        <ul className="nav navbar-nav navbar-right">
-          <li><a href="../navbar/">Default</a></li>
-          <li><a href="../navbar-static-top/">Static top</a></li>
-          <li className="active"><a href="./">Fixed top <span className="sr-only">(current)</span></a></li>
-        </ul>
-      </div>
-    </div>
-    )
-  }
+
+    render() {
+        return (
+
+            <header className="slimHeader">
+                <div className="navWrapper">
+                    <div className="logoWrap">
+                        <img className="logo" id="igem" src="../static/img/IgemLogoGreyIcon.png" alt=""/>
+                        <img className="logo" id="biosynth" src="../static/img/UCLigem_icon.png" alt=""/>
+                        <div id="logoTextBed">
+                            <h2 className="logoText">UCL iGEM</h2>
+                            <h2 className="logoText">Team 2016</h2>
+                        </div>
+                    </div>
+                    <ul className="navOptionsList">
+                        <li className="navOptions">About</li>
+                        <li className="navOptions">Team</li>
+                        <li className="navOptions">Contact</li>
+                    </ul>
+                </div>
+            </header>
+
+        )
+    }
 }

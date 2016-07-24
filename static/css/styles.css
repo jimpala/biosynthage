@@ -1,6 +1,52 @@
-.landing-main-slide {
+/* FONT IMPORTS */
+
+@font-face {
+    font-family: 'Rounded Elegance';
+    src: url("../font/Rounded_Elegance.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* GENERAL */
+
+body {
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: Lato;
+}
+
+
+.copyStyle {
+    font-size: 50px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 0;
+    font-family: Lato;
+    opacity: 0;
+    width: 100%;
+    -webkit-transition: opacity 1.5s ease-in
+}
+
+.headlineStyle {
+    font-size: 60px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 0;
+    font-family: "Rounded Elegance";
+    opacity: 0;
+    width: 100%;
+    -webkit-transition: opacity 1.5s ease-in
+}
+
+
+
+
+
+.landing-content-container {
     position: relative;
-    background: #000 url("https://upload.wikimedia.org/wikipedia/commons/6/65/DNA_com_GGN.jpg") center center;
+    background-color: rgba(0,0,0,0);
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -8,14 +54,26 @@
     padding: 0;
 }
 
-.landing-video-slide {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+.landing-background {
+    position: absolute;
+    background: #000 url("../img/neurons_crop.jpg") center center;
+    -webkit-filter: grayscale(100%);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     background-size: cover;
     overflow: hidden;
     padding: 0;
+    z-index: -100;
+
+    -webkit-transition: -webkit-filter 1.0s ease-in;
 }
+
+.colorIn{
+    -webkit-filter: grayscale(0%);
+}
+
 
 .landing-background-slide {
     position: relative;
@@ -51,7 +109,6 @@
 
 
 
-
 .teamMemberHighlightOverlay-appear {
     opacity: 0.01;
 }
@@ -80,3 +137,128 @@
     opacity: 0.01;
     transition: opacity .5s ease-in;
 }
+
+/* SLIMLINE NAV */
+
+.slimHeader {
+    background-color: rgba(0,0,0,0);
+    position: fixed;
+    height: 60px;
+    top: 0;
+    z-index: 4;
+    width: 100%;
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.navWrapper {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0);
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoWrap {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.navOptionsList {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    width: 400px;
+    height: 98%;
+    margin: 0;
+    margin-bottom: 2%;
+    padding: 0;
+
+
+}
+
+/* inline-flex means that the inline content (stuff
+   between the tags) will exhibit flex behaviour.
+*/
+.navOptions {
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    margin-left: 45px;
+    margin-bottom: 10px;
+
+    font-family: Lato;
+    color: whitesmoke;
+    font-size: 18px;
+
+    border-top: whitesmoke solid 4px;
+    border-bottom: ghostwhite solid 2px;
+}
+
+.navOptionsList:first-child{
+    margin-left: 0;
+}
+
+#logoTextBed {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-left: whitesmoke solid 2px;
+
+}
+
+.logoText {
+    /*font-family: "Rounded Elegance";*/
+    /*color: white;*/
+    /*font-size: 38px;*/
+    /*margin: 0;*/
+    /*text-rendering: geometricPrecision;*/
+
+    font-family: Lato;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 0 8px;
+    text-rendering: optimizeLegibility;
+    color: white;
+
+
+
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+
+    -webkit-transition: -webkit-filter 1.0s ease-in;
+}
+
+#igem {
+    margin: 0 4px 3px 0;
+
+}
+
+#biosynth {
+    margin: 0 5px 2px 0;
+}
+
+.menuDivider {
+    position: absolute;
+
+    width: 800px;
+    height: 14px;
+    border-bottom: whitesmoke solid 1px;
+    opacity: 0.6;
+}
+
