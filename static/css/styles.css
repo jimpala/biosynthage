@@ -29,9 +29,15 @@ body {
     -webkit-transition: opacity 1.5s ease-in
 }
 
-#logoTextSpan {
-    font-family: 'Rounded Elegance';
-
+.headlineStyle {
+    font-size: 60px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 0;
+    font-family: "Rounded Elegance";
+    opacity: 0;
+    width: 100%;
+    -webkit-transition: opacity 1.5s ease-in
 }
 
 
@@ -189,7 +195,7 @@ body {
 }
 
 #logo {
-    height: 45px;
+    height: 50px;
     width: auto;
 
     -webkit-transition: -webkit-filter 1.0s ease-in;

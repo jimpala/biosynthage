@@ -126,7 +126,7 @@ export default class MainSlide extends React.Component {
         setTimeout(()=>{
             this.setState({copyInjection:
                 <div style={styles.copyDiv}>
-                    <p id="copy1" className="copyStyle">We are  <span id="logoTextSpan">BIOSYNTHAGE</span>.</p>
+                    <p id="copy1" className="headlineStyle">We are Biosynthage.</p>
                 </div>,
                 weAreBiosynthage: true,
             });
@@ -137,11 +137,9 @@ export default class MainSlide extends React.Component {
     componentDidUpdate(){
         if (this.state.weAreBiosynthage == true) {
             let copy1 = document.getElementById('copy1');
-            let logoTextSpan = document.getElementById('logoTextSpan');
 
             setTimeout(() => {
                 copy1.style.opacity = 1;
-                logoTextSpan.style.opacity = 1;
             },1000);
 
         }
