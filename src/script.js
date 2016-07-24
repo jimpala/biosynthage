@@ -22,7 +22,7 @@ import App from './components/App.jsx';
 // Import 'page' .jsx files
 import LandingPage from './components/landing/LandingPage.jsx';
 import DescriptionPage from './components/description/DescriptionPage.jsx';
-import TeamPage from './components/team/TeamPage';
+import TeamPage from './components/team/TeamPage.jsx';
 
 
 
