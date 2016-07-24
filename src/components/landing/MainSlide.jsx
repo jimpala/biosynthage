@@ -175,7 +175,7 @@ export default class MainSlide extends React.Component {
     buttonClick() {
 
         if (this.props.first) {
-            $('.landing-background, #logo').css('-webkit-filter', 'grayscale(0%)');
+            $('.landing-background, .logo').css('-webkit-filter', 'grayscale(0%)');
 
             // This selector should cover opacity of all children
             const $billboard_all = $('#billboardDiv');

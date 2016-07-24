@@ -66,7 +66,7 @@ export default class LandingPage extends React.Component {
 
     componentDidMount(){
 
-        let $logo = $('#logo');
+        let $logo = $('.logo');
         $logo.css('-webkit-filter', 'grayscale(100%)');
     }
 
@@ -74,7 +74,7 @@ export default class LandingPage extends React.Component {
 
         // Un-grayscale upon exit.
 
-        let $logo = $('#logo');
+        let $logo = $('.logo');
 
         $logo.css('-webkit-filter', 'grayscale(0%)');
     }
