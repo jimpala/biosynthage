@@ -10,13 +10,31 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-
+const styles = {
+    navLink : {
+        borderTop: 'whitesmoke solid 4px',
+        fontWeight: '700',
+        opacity: '1',
+    },
+};
 
 
 
 export default class Menu extends React.Component {
 
+    componentDidMount() {
+        document.addEventListener('menu', this.menuEventHandler)
+    }
+
+    menuEventHandler(e) {
+        if (e != '/') {
+            $('.slimHeader').css('background-color', 'black');
+        }
+    }
+
+
     render() {
+
         return (
 
             <header className="slimHeader">
@@ -30,7 +48,7 @@ export default class Menu extends React.Component {
                         </div>
                     </div>
                     <ul className="navOptionsList">
-                        <li className="navOptions">About</li>
+                        <li className="navOptions"><Link to="/about" activeStyle={styles.navLink}>About</Link></li>
                         <li className="navOptions">Team</li>
                         <li className="navOptions">Contact</li>
                     </ul>

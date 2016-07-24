@@ -37,9 +37,9 @@ export default class LandingPage extends React.Component {
 
     // Appends state calibration to standard Component constructor.
 
-    constructor() {
+    constructor(props) {
         // Set 'this' characteristics by calling parent constructor.
-        super();
+        super(props);
 
         // Set binding to component instance in our constructor.
         // It needs doing, otherwise the 'this' of the method
@@ -47,21 +47,23 @@ export default class LandingPage extends React.Component {
         // Doing this in the constructor means binding only
         // needs to occur the once.
         // Alternatively, an arrow function automatically binds the component.
+        this.toggleOnOff = this.toggleOnOff.bind(this);
 
+        /*
+        INITIAL STATES
 
-        // Set initial state
+        off: Learn more button available to click (not clicked)
+        clickOne:
+        */
         this.state = {
             off: true,
             clickOne: true,
             clickTwo: true
         };
 
-        this.toggleOnOff = this.toggleOnOff.bind(this)
 
 
-
-
-
+        this.menuDispatch();
     }
 
     componentDidMount(){
@@ -79,6 +81,10 @@ export default class LandingPage extends React.Component {
         $logo.css('-webkit-filter', 'grayscale(0%)');
     }
 
+    menuDispatch() {
+        let menuEvent = new CustomEvent('menu', {activeRoute: this.props.location.pathname});
+        document.dispatchEvent(menuEvent);
+    }
 
     toggleOnOff() {
 
@@ -95,49 +101,7 @@ export default class LandingPage extends React.Component {
     }
 
 
-    /*
-     learnMore()
-     -> Fade out logo on front.
-     -> Change displaySlide state to 1 upon finish.
-     */
-    // learnMore() {
-    //     $('#mainSlide').animate({
-    //         opacity: 0
-    //     }, 1000, ()=> {
-    //         this.setState({
-    //             off: false
-    //         });
-    //     })
-    // }
 
-    /*
-     learnLess()
-     -> Fade out landing video; fade in logo.
-     -> Change displaySlide state to 0 upon finish.
-     */
-    // learnLess() {
-    //     $('#mainSlide').animate({
-    //         opacity: 1
-    //     }, 1000);
-    //
-    //     $('#landingVideo').animate({
-    //         opacity: 0
-    //     }, 1000);
-    //
-    //     $('#videoDiv').animate({
-    //         opacity: 0
-    //     }, 1000, ()=> {
-    //         this.setState({
-    //             off: true
-    //         });
-    //     })
-    //
-    //
-
-    /*
-     render()
-
-     */
     render() {
 
         // Key dependent on state.

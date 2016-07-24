@@ -28,15 +28,21 @@ import DescriptionPage from './components/description/DescriptionPage.jsx';
 /*
 Route structure in variable next.
 App is the base path ('/'), and will match all children.
-LandingPage ('/home') as IndexRoute will be routed to if
+LandingPage as IndexRoute will be routed to if
 no children match
 */
+
+/*
+menuDispatch
+Event emitter from ___Page.jsx to Menu.jsx
+ */
+
 
 ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={App}>
-            <IndexRoute component={LandingPage}/>
-            <Route path="/description" component={DescriptionPage}/>
+            <IndexRoute component={LandingPage} routeName="landing"/>
+            <Route path="/about" component={DescriptionPage}/>
         </Route>
     </Router>,
     document.getElementById('react-container')
