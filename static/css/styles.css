@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Rounded Elegance';
-    src: url("../font/Rounded_Elegance.ttf");
+    src: url("http://biosynthage.appspot.com/font/Rounded_Elegance.ttf");
     font-weight: normal;
     font-style: normal;
 }
@@ -64,7 +64,7 @@ a:hover {
 
 .landing-background {
     position: absolute;
-    background: #000 url("../img/neurons_crop.jpg") center center;
+    background: #000 url("http://biosynthage.appspot.com/img/neurons_crop.jpg") center center;
     -webkit-filter: grayscale(100%);
     top: 0;
     bottom: 0;
@@ -82,16 +82,16 @@ a:hover {
     -webkit-filter: grayscale(0%);
 }
 
-
-.landing-background-slide {
-    position: relative;
-    background: #000 url('http://2015.igem.org/wiki/images/a/a5/UCLFRONTBLOCK_1_2015.png') center center;
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    overflow: hidden;
-    padding: 0;
-}
+/*FOR DELETION*/
+/*.landing-background-slide {*/
+    /*position: relative;*/
+    /*background: #000 url('http://2015.igem.org/wiki/images/a/a5/UCLFRONTBLOCK_1_2015.png') center center;*/
+    /*width: 100vw;*/
+    /*height: 100vh;*/
+    /*background-size: cover;*/
+    /*overflow: hidden;*/
+    /*padding: 0;*/
+/*}*/
 
 .description-background {
     position: relative;
@@ -231,22 +231,14 @@ a:hover {
 }
 
 .logoText {
-    /*font-family: "Rounded Elegance";*/
-    /*color: white;*/
-    /*font-size: 38px;*/
-    /*margin: 0;*/
-    /*text-rendering: geometricPrecision;*/
 
     font-family: Lato;
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 700;
     margin: 0 0 0 8px;
     text-rendering: optimizeLegibility;
     color: white;
-
-
 
 }
 
@@ -259,7 +251,6 @@ a:hover {
 
 #igem {
     margin: 0 4px 3px 0;
-
 }
 
 #biosynth {

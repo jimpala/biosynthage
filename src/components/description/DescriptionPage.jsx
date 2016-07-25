@@ -58,8 +58,6 @@ export default class DescriptionPage extends React.Component {
 
     render() {
 
-        console.log(this.props.location.pathname);
-
         return (
             <div>
                 <div className="description-background" style={styles.container}>

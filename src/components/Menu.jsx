@@ -11,13 +11,12 @@ import React from 'react';
 import {Link} from 'react-router';
 
 const styles = {
-    navLink : {
+    navLink: {
         borderTop: 'whitesmoke solid 4px',
         fontWeight: '700',
         opacity: '1',
     },
 };
-
 
 
 export default class Menu extends React.Component {
@@ -40,8 +39,9 @@ export default class Menu extends React.Component {
             <header className="slimHeader">
                 <div className="navWrapper">
                     <div className="logoWrap">
-                        <img className="logo" id="igem" src="../static/img/IgemLogoGreyIcon.png" alt=""/>
-                        <img className="logo" id="biosynth" src="../static/img/UCLigem_icon.png" alt=""/>
+                        <img className="logo" id="igem" src="http://biosynthage.appspot.com/img/IgemLogoGreyIcon.png"
+                             alt=""/>
+                        <img className="logo" id="biosynth" src="http://biosynthage.appspot.com/img/Ucligem_icon.png" alt=""/>
                         <div id="logoTextBed">
                             <h2 className="logoText">UCL iGEM</h2>
                             <h2 className="logoText">Team 2016</h2>
