@@ -10,7 +10,7 @@ const styles = {
         width: '100%',
         height: '100%',
         backgroundColor: 'rgba(0,0,0,0)',
-        paddingTop: '60px',
+        paddingTop: '74px',
     },
 
 
@@ -66,10 +66,9 @@ export default class LandingPageInformation extends React.Component {
         return (
             //[1]
             <div id="mainSlide" style={styles.container} onClick={this.props.toggleOnOff}>
-                <div className="menuDivider"></div>
                 <div id="billboardDiv" style={styles.billboardDiv} onClick={this.props.toggleOnOff}>
                     <iframe id='landingVideo' className="cinema" style={styles.video} width="600" height="337"
-                            src="https://www.youtube.com/embed/W2gOIFxCWZ4"
+                            src="https://player.vimeo.com/video/176164825"
                             frameBorder="0"></iframe>
                 </div>
             </div>

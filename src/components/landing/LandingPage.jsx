@@ -112,7 +112,7 @@ export default class LandingPage extends React.Component {
         return (
 
             <div style={styles.masterContainer}>
-                <div className="landing-content-container">
+                <div id="landingBackground" className="landing-content-container">
                     {/*[1]*/}
                     {this.state.off ?
                         <MainSlide key={text} toggleOnOff={this.toggleOnOff} first={this.state.clickOne}/> :
