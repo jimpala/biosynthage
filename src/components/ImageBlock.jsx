@@ -31,7 +31,7 @@ export default class ImageBlock extends React.Component {
   componentWillMount() {
     styles.imageBlock.width = this.props.width;
     styles.imageBlock.height = this.props.height;
-    styles.imageBlock.background = 'url("' + this.props.imageData.image1 + '") center center';
+    styles.imageBlock.background = 'url("' + this.props.imageData.image + '") center center';
     styles.imageBlock.backgroundSize = 'cover';
     styles.imageBlock.overflow = 'hidden';
 
