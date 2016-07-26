@@ -24,6 +24,7 @@ const styles = {
   text: {
     position: 'relative',
     color: 'white',
+    backgroundColor: 'transparent',
     opacity: 0
   },
 };
