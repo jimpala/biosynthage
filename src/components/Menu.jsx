@@ -12,8 +12,15 @@ import {Link} from 'react-router';
 
 const styles = {
     navLink: {
-
+        opacity: '0.9',
+        fontWeight: 'bold',
     },
+};
+
+const menus = {
+
+
+
 };
 
 
@@ -49,8 +56,8 @@ export default class Menu extends React.Component {
                         </div>
                     </div>
                     <ul className="navOptionsList">
-                        <li className="navOptions"><Link to="/" activeStyle={styles.navLink}>About</Link></li>
-                        <li className="navOptions">Team</li>
+                        <li className="navOptions"><Link to="/about" activeStyle={styles.navLink}>About</Link></li>
+                        <li className="navOptions"><Link to="/team" activeStyle={styles.navLink}>Team</Link></li>
                         <li className="navOptions">Contact</li>
                     </ul>
                 </div>

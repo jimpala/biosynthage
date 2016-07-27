@@ -44,7 +44,7 @@ ReactDOM.render(
         <Route path="/" component={App}>
             <IndexRoute component={LandingPage}/>
             <Route path="/about" component={DescriptionPage}/>
-            <Route path="/team" component={TeamPage}></Route>
+            <Route path="/team" component={TeamPage}/>
         </Route>
     </Router>,
     document.getElementById('react-container')

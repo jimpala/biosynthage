@@ -173,16 +173,18 @@ a, a:hover, a:active, a:visited {
     background-color: rgba(0,0,0,0);
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     border-bottom: rgba(245,245,245,0.8) solid 1px;
 }
 
 .logoWrap {
-    width: 300px;
-    height: 65px;
+    width: 220px;
+    height: 51px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+    transform: translate(0px,3px);
 }
 
 .navOptionsList {
@@ -203,8 +205,8 @@ a, a:hover, a:active, a:visited {
     display: inline-flex;
     justify-content: center;
     align-items: flex-end;
-    height: 59px;
-    margin-left: 45px;
+    height: 64px;
+    margin: 0 0 0 45px;
 
     font-family: Lato;
     color: white;
