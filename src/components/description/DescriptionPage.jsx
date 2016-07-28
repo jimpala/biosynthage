@@ -52,7 +52,8 @@ export default class DescriptionPage extends React.Component {
     }
 
     menuDispatch() {
-        let menuEvent = new CustomEvent('menu', {activeRoute: this.props.location.pathname});
+
+        let menuEvent = new CustomEvent('menu', {'detail': this.props.location.pathname});
         document.dispatchEvent(menuEvent);
     }
 
