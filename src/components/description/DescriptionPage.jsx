@@ -62,11 +62,13 @@ export default class DescriptionPage extends React.Component {
     componentDidMount() {
         // Dispatch menu event.
         this.menuDispatch();
+
+      setTimeout(()=>{
+        $('.page').toggleClass('page-active');
+      }, 10)
     }
 
-
     menuDispatch() {
-
         let menuEvent = new CustomEvent('menu', {'detail': this.props.location.pathname});
         document.dispatchEvent(menuEvent);
     }
@@ -75,7 +77,7 @@ export default class DescriptionPage extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="page">
                 <div className="description-background" style={styles.container}>
                     <h1 className="display-1" style={styles.overviewText}>Overview</h1>
 

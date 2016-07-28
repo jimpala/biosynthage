@@ -110,6 +110,10 @@ export default class TeamPage extends React.Component {
 
     componentDidMount() {
         this.menuDispatch();
+
+      setTimeout(()=>{
+        $('.page').toggleClass('page-active');
+      }, 10)
     }
 
     menuDispatch() {
@@ -151,7 +155,7 @@ export default class TeamPage extends React.Component {
 
     render() {
         return (
-            <div style={styles.teamPageContainer}>
+            <div style={styles.teamPageContainer} className="page">
                 <Menu/>
 
                 <ReactCSSTransitionGroup transitionName="teamMemberHighlightOverlay"
