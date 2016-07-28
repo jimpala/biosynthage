@@ -3,6 +3,12 @@ import React from 'react';
 const styles = {
   imageBlock: {
     position: 'relative',
+    color: 'transparent',
+    display: 'flex',
+    alignItems: 'flex-end',
+    overflow: 'hidden',
+    width: '35vw',
+    height: '20vw'
   },
 
   imageBlockTextOverlay: {
@@ -10,66 +16,46 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#000000',
-    opacity: 0
+    width: '35vw',
+    height: '20vw',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
 
   text: {
     position: 'relative',
+    color: 'white',
+    backgroundColor: 'transparent',
+    opacity: 0
   },
+};
 
-  imageAnchor: {
-    color: 'transparent'
-  }
-}
+export default ({width, height, image, id, text}) => (
+  <a href="#about" style={{
+       ...styles.imageBlock,
+       background: `url("${image}") center center`,
+       backgroundSize: 'cover'
+       }}
+    onMouseEnter={(e)=>{
+              $('#' + e.target.id).animate({
+                  backgroundColor: 'rgba(0,0,0,0.75)'
+              }, 500)
 
-export default class ImageBlock extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+              $('#' + e.target.firstChild.id).animate({
+                  opacity: 1
+              }, 500)
+          }}
+    onMouseLeave={(e)=>{
+      $('#' + e.target.id).animate({
+                  backgroundColor: 'rgba(0,0,0,0)'
+              }, 500)
 
-  componentWillMount() {
-    styles.imageBlock.width = this.props.width;
-    styles.imageBlock.height = this.props.height;
-    styles.imageBlock.background = 'url("' + this.props.imageData.image + '") center center';
-    styles.imageBlock.backgroundSize = 'cover';
-    styles.imageBlock.overflow = 'hidden';
+              $('#' + e.target.firstChild.id).animate({
+                  opacity: 0
+              }, 500)
+          }}>
 
-    styles.imageBlockTextOverlay.width = this.props.width;
-    styles.imageBlockTextOverlay.height = this.props.height;
-  }
-
-  imageMouseEnter(e) {
-    console.log(e.target.id);
-    const $image = $('#' + e.target.id);
-
-    $image.animate({
-      opacity: 0.75
-    }, 500);
-
-    e.target.firstChild.innerHTML = this.props.imageData.text;
-    e.target.firstChild.style.color = '#FFFFFF';
-  }
-
-  imageMouseLeave(e) {
-    const $image = $('#' + e.target.id);
-
-    $image.animate({
-      opacity: 0
-    }, 500);
-
-    e.target.firstChild.innerHTML = this.props.imageData.text;
-    e.target.firstChild.innerHTML = "";
-  }
-
-  render() {
-    return <a href="#" style={styles.imageAnchor}>
-      <div id="imageDiv" style={styles.imageBlock}>
-        <div id={this.props.id} style={styles.imageBlockTextOverlay} onMouseEnter={this.imageMouseEnter.bind(this)}
-             onMouseLeave={this.imageMouseLeave.bind(this)}>
-          <p className="lead" style={styles.text}></p>
-        </div>
-      </div>
-    </a>
-  }
-}
+    <div id={id} style={styles.imageBlockTextOverlay}>
+      <p id={'p' + id} className="lead" style={styles.text}>{text}</p>
+    </div>
+  </a>
+)

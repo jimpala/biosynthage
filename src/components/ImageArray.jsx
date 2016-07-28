@@ -20,7 +20,7 @@ export default class ImageArray extends React.Component {
     return (
       <div style={styles.imageArray}>
         {this.props.imageArrayData.map((imageData)=>{
-            return <ImageBlock key={imageData.id} id={imageData.id} imageData={imageData} width="35vw" height="20vw"/>
+            return <ImageBlock key={imageData.id} id={imageData.id} image={imageData.image} text={imageData.text}/>
         })}
       </div>
     )
