@@ -17,11 +17,23 @@ body {
     font-family: Lato;
 }
 
+h1 {
+    font-family: "Rounded Elegance";
+    color: black;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+h2 {
+    margin: 0;
+}
+
 .navOptionsList a {
     color: white;
 }
 
-a:hover {
+a, a:hover, a:active, a:visited {
     text-decoration: none;
 }
 
@@ -95,7 +107,7 @@ a:hover {
 
 .description-background {
     position: relative;
-    background: linear-gradient(rgba(240, 240, 240, 1), rgba(240, 240, 240, 1));
+    background: white;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -150,8 +162,8 @@ a:hover {
 
 .slimHeader {
     background-color: rgba(0,0,0,0);
-    position: fixed;
-    height: 60px;
+    position: absolute;
+    height: 75px;
     top: 0;
     z-index: 4;
     width: 100%;
@@ -164,18 +176,23 @@ a:hover {
 .navWrapper {
     position: relative;
     width: 800px;
+    height: 74px;
     margin: 0 auto;
     background-color: rgba(0,0,0,0);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    border-bottom: rgba(245,245,245,0.8) solid 1px;
 }
 
 .logoWrap {
-    width: 300px;
-    height: 100%;
+    width: 220px;
+    height: 51px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+    transform: translate(0px,3px);
 }
 
 .navOptionsList {
@@ -183,9 +200,7 @@ a:hover {
     justify-content: flex-end;
     list-style: none;
     width: 400px;
-    height: 98%;
-    margin: 0;
-    margin-bottom: 2%;
+    height: 74px;
     padding: 0;
 
 
@@ -198,9 +213,8 @@ a:hover {
     display: inline-flex;
     justify-content: center;
     align-items: flex-end;
-    height: 100%;
-    margin-left: 45px;
-    margin-bottom: 10px;
+    height: 64px;
+    margin: 0 0 0 45px;
 
     font-family: Lato;
     color: white;
@@ -220,6 +234,9 @@ a:hover {
 }
 
 #logoTextBed {
+
+
+
     width: 100px;
     height: 50px;
     display: flex;
@@ -227,7 +244,18 @@ a:hover {
     justify-content: center;
 
     border-left: whitesmoke solid 2px;
+}
 
+#logoTextBG {
+    width: 84px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    margin: 0 0 0 8px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 2px;
 }
 
 .logoText {
@@ -236,10 +264,10 @@ a:hover {
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
     font-weight: 700;
-    margin: 0 0 0 8px;
     text-rendering: optimizeLegibility;
-    color: white;
-
+    color: floralwhite;
+    margin: 0 0 0 2px;
+    opacity: 0.95;
 }
 
 .logo {
@@ -250,19 +278,22 @@ a:hover {
 }
 
 #igem {
-    margin: 0 4px 3px 0;
+    margin: 0 4px 2px 0;
 }
 
 #biosynth {
-    margin: 0 5px 2px 0;
+    margin: 0 5px 1px 0;
 }
 
-.menuDivider {
-    position: absolute;
-
-    width: 800px;
-    height: 14px;
-    border-bottom: whitesmoke solid 1px;
-    opacity: 0.8;
+#biosynthageText {
+    font-size: 30px;
 }
 
+
+/* NAV ANIMATION */
+
+@-webkit-keyframes ColorOsc {
+    0%{background-position:0% 78%}
+    50%{background-position:100% 23%}
+    100%{background-position:0% 78%}
+}

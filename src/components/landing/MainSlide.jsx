@@ -101,8 +101,8 @@ export default class MainSlide extends React.Component {
             weAreBiosynthage: false,
             copyInjection:
                 <div style={styles.copyDiv}>
-                    <p id="copy1" className="copyStyle">What would you do</p>
-                    <p id="copy2" className="copyStyle">with 25 more years of your life?</p>
+                    <p id="copy1" className="copyStyle">Synthetic biology solutions</p>
+                    <p id="copy2" className="copyStyle">to afford longer, healthier lives.</p>
                 </div>,
         }
 
@@ -139,6 +139,7 @@ export default class MainSlide extends React.Component {
             let copy1 = document.getElementById('copy1');
 
             setTimeout(() => {
+                $('.landing-background, .logo').css('-webkit-filter', 'grayscale(0%)');
                 copy1.style.opacity = 1;
             },1000);
 
@@ -175,6 +176,8 @@ export default class MainSlide extends React.Component {
     buttonClick() {
 
         if (this.props.first) {
+
+            // In case colour hasn't come in yet.
             $('.landing-background, .logo').css('-webkit-filter', 'grayscale(0%)');
 
             // This selector should cover opacity of all children
@@ -193,7 +196,7 @@ export default class MainSlide extends React.Component {
                 stateTimeout = setTimeout((function () {
                     that.props.toggleOnOff();
                 }), 1000)
-            }), 1000);
+            }), 0);
         }
 
         else {
@@ -205,7 +208,6 @@ export default class MainSlide extends React.Component {
     render() {
         return (
             <div id="mainSlide" style={styles.container}>
-                <div className="menuDivider"></div>
                 <div id="billboardDiv" style={styles.billboardDiv}>
                     <div style={styles.billboardAlignDiv}>
                         {this.state.copyInjection}

@@ -61,15 +61,15 @@ export default class LandingPage extends React.Component {
             clickTwo: true
         };
 
+        this.menuDispatch = this.menuDispatch.bind(this);
 
-
-        this.menuDispatch();
     }
 
     componentDidMount() {
 
         let $logo = $('.logo');
         $logo.css('-webkit-filter', 'grayscale(100%)');
+        this.menuDispatch();
     }
 
     componentWillUnmount(){
@@ -82,7 +82,8 @@ export default class LandingPage extends React.Component {
     }
 
     menuDispatch() {
-        let menuEvent = new CustomEvent('menu', {activeRoute: this.props.location.pathname});
+        console.log(this.props.location.pathname)
+        let menuEvent = new CustomEvent('menu', {'detail': this.props.location.pathname});
         document.dispatchEvent(menuEvent);
     }
 
@@ -112,7 +113,7 @@ export default class LandingPage extends React.Component {
         return (
 
             <div style={styles.masterContainer}>
-                <div className="landing-content-container">
+                <div id="landingBackground" className="landing-content-container">
                     {/*[1]*/}
                     {this.state.off ?
                         <MainSlide key={text} toggleOnOff={this.toggleOnOff} first={this.state.clickOne}/> :
